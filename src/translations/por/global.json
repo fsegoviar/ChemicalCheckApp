@@ -1,0 +1,30 @@
+{
+  "login": {
+    "title": "Iniciar Sessão",
+    "email": "Correio eletrônico",
+    "password": "Senha",
+    "accept": "Faça login com a conta do Google",
+    "register": "Registrar",
+    "errorEmail": "O e-mail é obrigatório",
+    "errorEmailFormat": "O formato de e-mail não está correto",
+    "errorPassword": "Senha requerida",
+    "errorPasswordFormat": "A senha deve ter pelo menos 2 caracteres"
+  },
+  "register": {
+    "title": "Cadastro de usuário",
+    "name": "Nomes",
+    "errorName": "Nombre requerido",
+    "surname": "Nomes obrigatórios",
+    "errorSurname": "sobrenome obrigatório",
+    "email": "Correio eletrônico",
+    "errorEmail": "O e-mail é obrigatório",
+    "errorEmailFormat": "O formato de e-mail não está correto",
+    "password": "Senha",
+    "errorPassword": "Senha requerida",
+    "errorPasswordFormat": "A senha deve ter pelo menos 2 caracteres",
+    "rpassword": "repetir a senha",
+    "errorRPassword": "Campo obrigatório",
+    "return": "Retorna",
+    "accept": "aceitar"
+  }
+}

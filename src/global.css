@@ -1,0 +1,66 @@
+.config-img{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.unstyle-link{
+    color: #FFFFFF;
+    text-decoration:none;
+}
+
+.unstyle-link:link, .unstyle-link:visited, .unstyle-link:active{
+    text-decoration:none;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+    font-weight: bold;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    text-align: center;
+    font-weight: bold;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;
+    font-weight: bold;
+}
+
+:-ms-input-placeholder {
+    text-align: center;
+    font-weight: bold;
+}
+
+.input-style{
+    margin: 10px;
+    width: 20vw;
+    border: 3px solid #91BE33;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 2rem;
+}
+
+.input-validate-CAS{
+    margin: 10px;
+    width: 30vw;
+    border: 3px solid #91BE33;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 1.8rem;
+    border-radius: 10px;
+}
+
+.btn-search{
+    margin: 10px;
+    border: none;
+    width: 10vw;
+    box-sizing: border-box;
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 50px;
+    color: white;
+    background-color: #91BE33;
+}
