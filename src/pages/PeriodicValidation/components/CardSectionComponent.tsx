@@ -1,11 +1,11 @@
 import React from 'react';
-import {Box, Paper} from "@mui/material";
+import {Paper} from "@mui/material";
 import {Link} from "react-router-dom";
 
 const CardSectionComponent = ({imgDefault, title, url}: any) => {
   return (
     <Paper className={"config-img"} sx={{
-      backgroundImage: `url(${imgDefault})`,
+      backgroundColor: "#1F804D",
       display: "flex",
       flexDirection: 'column',
       justifyContent: "center",
@@ -18,16 +18,6 @@ const CardSectionComponent = ({imgDefault, title, url}: any) => {
         transform: "scale(1.1)",
       }
     }}>
-      <Box sx={{
-        opacity: "0.8",
-        backgroundColor: "green",
-        width: "100%",
-        height: "100%",
-        position: "absolute",
-        top:0,
-        left:0
-      }}>
-      </Box>
       <h1 style={{zIndex: "1", textAlign: "center"}}><Link to={url} style={{
         textDecoration: "none",
         color: "white"
