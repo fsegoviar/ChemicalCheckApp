@@ -78,8 +78,8 @@ const Home = () => {
             <Grid item xs={12} md={8} lg={6}>
               <CategoryComponent
                 urlImg="https://images.unsplash.com/photo-1595500381751-d940898d13a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1856&q=80"
-                title={translate("home.unlockChemical")}
-                to="/desbloquear_insumo"
+                title={translate("home.updateFormSupplier")}
+                to="/actualizar_formulario_proveedor"
               />
             </Grid>
           </Grid>

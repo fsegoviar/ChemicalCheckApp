@@ -6,6 +6,7 @@
     "reports": "Informes",
     "registerChemical": "Registrar nuevo insumo",
     "unlockChemical": "Desbloquear insumos para compra",
+    "updateFormSupplier": "Actualizar formulario proveedor",
     "logout": "Cerrar Sesión"
   },
   "listChemicalRegister": {
@@ -60,6 +61,11 @@
     "header": "Desbloquear insumos para compra",
     "input": "Elige un insumo para desbloquear",
     "button": "Generar informe"
+  },
+  "updateFormSupplier": {
+    "header": "Actualizar formulario proveedor",
+    "title1": "Actualización periódica/fija",
+    "title2": "Actualización manual"
   },
   "login": {
     "title": "Iniciar Sesión",

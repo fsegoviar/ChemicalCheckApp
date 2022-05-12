@@ -1,7 +1,7 @@
 import React from 'react';
 import i18next from "i18next";
 import {I18nextProvider} from "react-i18next";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes, Navigate} from "react-router-dom";
 import SelectLanguage from "./pages/SelectLanguage/SelectLanguage";
 import global_es from "./translations/es/global.json";
 import global_por from "./translations/por/global.json";
@@ -18,10 +18,10 @@ import ReviewTicket from "./pages/RegisterChemical/ReviewTicket";
 import UnlockChemical from "./pages/UnlockChemical/UnlockChemical";
 import NoRegister from "./pages/ListChemicalRegister/subpages/NoRegister";
 import OptionsRegister from "./pages/ListChemicalRegister/subpages/OptionsRegister";
+import RequiredLang from "./route/RequiredLang";
+import UpdateFormSupplier from "./pages/UpdateFormSupplier/UpdateFormSupplier";
 
 function App() {
-
-
   //Translation
   i18next.init({
     interpolation: {escapeValue: false},
@@ -45,21 +45,28 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path={"language"} element={<SelectLanguage/>}/>
-          <Route path={"/"} element={<Home/>}/>
-          <Route path={"listado_insumos"} element={<ListChemicalRegister/>}/>
-          <Route path={"listado_insumos/no_registrado"} element={<NoRegister/>}/>
-          <Route path={"listado_insumos/opcion_registro"} element={<OptionsRegister/>}/>
-          <Route path={"validar_cas"} element={<ValidateCAS/>}/>
-          <Route path={"validacion_periodica"} element={<PeriodicValidation/>}/>
-          <Route path={"validacion_periodica/analisis_anual"} element={<AnualAnalysis/>}/>
-          <Route path={"validacion_periodica/analisis_por_regulaciones"} element={<AnalysisRegulations/>}/>
-          <Route path={"reportes"} element={<Reports/>}/>
-          <Route path={"registrar_insumo"} element={<RegisterChemical/>}/>
-          <Route path={"registrar_insumo/nuevo_registro"} element={<NewChemical/>}/>
-          <Route path={"registrar_insumo/revisar_solicitud"} element={<ReviewTicket/>}/>
-          <Route path={"desbloquear_insumo"} element={<UnlockChemical/>}/>
+          <Route path={"/"} element={<RequiredLang><Home/></RequiredLang>}/>
+          <Route path={"listado_insumos"} element={<RequiredLang><ListChemicalRegister/></RequiredLang>}/>
+          <Route path={"listado_insumos/no_registrado"} element={<RequiredLang><NoRegister/></RequiredLang>}/>
+          <Route path={"listado_insumos/opcion_registro"} element={<RequiredLang><OptionsRegister/></RequiredLang>}/>
+          <Route path={"validar_cas"} element={<RequiredLang><ValidateCAS/></RequiredLang>}/>
+          <Route path={"validacion_periodica"} element={<RequiredLang><PeriodicValidation/></RequiredLang>}/>
+          <Route path={"validacion_periodica/analisis_anual"} element={<RequiredLang><AnualAnalysis/></RequiredLang>}/>
+          <Route path={"validacion_periodica/analisis_por_regulaciones"}
+                 element={<RequiredLang><AnalysisRegulations/></RequiredLang>}/>
+          <Route path={"reportes"} element={<RequiredLang> <Reports/></RequiredLang>}/>
+          <Route path={"registrar_insumo"} element={<RequiredLang><RegisterChemical/></RequiredLang>}/>
+          <Route path={"registrar_insumo/nuevo_registro"} element={<RequiredLang><NewChemical/></RequiredLang>}/>
+          <Route path={"registrar_insumo/revisar_solicitud"} element={<RequiredLang> <ReviewTicket/></RequiredLang>}/>
+          <Route path={"desbloquear_insumo"} element={<RequiredLang><UnlockChemical/></RequiredLang>}/>
+          <Route path={"actualizar_formulario_proveedor"} element={<RequiredLang><UpdateFormSupplier/></RequiredLang>}/>
+          <Route
+            path="*"
+            element={<Navigate to="/language" replace/>}
+          />
         </Routes>
       </BrowserRouter>
+
     </I18nextProvider>
   );
 }

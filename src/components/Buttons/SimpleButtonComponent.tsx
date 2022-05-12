@@ -1,25 +1,31 @@
 import React from 'react';
 import {Button} from "@mui/material";
 
-const SimpleButtonComponent = ({title, color, handleClick}: any) => {
+interface PropsButton{
+  title: string;
+  color: string;
+  handleClick?: any;
+}
+
+const SimpleButtonComponent = (props: PropsButton) => {
   return (
     <Button
       sx={{
         fontSize: "1.5rem",
         fontWeight: "bold",
-        backgroundColor: color,
+        backgroundColor: props.color,
         borderRadius: 50,
         boxSizing: "border-box",
-        padding: "10px 20px",
+        padding: "10px 30px",
         margin: "20px",
         color: "white",
         "&:hover": {
-          backgroundColor: color
+          backgroundColor: props.color
         }
       }}
-      onClick={handleClick}
+      onClick={props.handleClick}
     >
-      {title}
+      {props.title}
     </Button>
   );
 };

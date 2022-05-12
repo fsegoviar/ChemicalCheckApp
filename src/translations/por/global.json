@@ -6,6 +6,7 @@
     "reports": "Relatórios",
     "registerChemical": "Registrar novo produto químico",
     "unlockChemical": "Desbloqueie químico para comprar",
+    "updateFormSupplier": "Atualizar formulário de fornecedor",
     "logout": "Sair"
   },
   "listChemicalRegister": {
@@ -60,6 +61,11 @@
     "header": "Desbloqueie suprimentos para compra",
     "input": "Escolha um item para desbloquear",
     "button": "Gerar relatório"
+  },
+  "updateFormSupplier": {
+    "header": "Atualizar formulário de fornecedor",
+    "title1": "Atualização periódica/Fixo",
+    "title2": "atualização manual"
   },
   "login": {
     "title": "Iniciar Sessão",

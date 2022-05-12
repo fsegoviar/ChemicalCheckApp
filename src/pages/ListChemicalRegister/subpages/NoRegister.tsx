@@ -20,7 +20,7 @@ const NoRegister = () => {
       <Box className={"config-img"} sx={{
         backgroundImage: `url(${fondoLab})`,
         width: "100%",
-        height: "75vh",
+        height: "80vh",
         position: "relative",
         display: "flex",
         justifyContent: "center",
