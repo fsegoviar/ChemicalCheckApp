@@ -20,6 +20,7 @@ import NoRegister from "./pages/ListChemicalRegister/subpages/NoRegister";
 import OptionsRegister from "./pages/ListChemicalRegister/subpages/OptionsRegister";
 import RequiredLang from "./route/RequiredLang";
 import UpdateFormSupplier from "./pages/UpdateFormSupplier/UpdateFormSupplier";
+import SearchSupplier from "./pages/RegisterChemical/SearchSupplier";
 
 function App() {
   //Translation
@@ -57,6 +58,7 @@ function App() {
           <Route path={"reportes"} element={<RequiredLang> <Reports/></RequiredLang>}/>
           <Route path={"registrar_insumo"} element={<RequiredLang><RegisterChemical/></RequiredLang>}/>
           <Route path={"registrar_insumo/nuevo_registro"} element={<RequiredLang><NewChemical/></RequiredLang>}/>
+          <Route path={"registrar_insumo/nuevo_registro/buscar_proveedor"} element={<RequiredLang><SearchSupplier/></RequiredLang>}/>
           <Route path={"registrar_insumo/revisar_solicitud"} element={<RequiredLang> <ReviewTicket/></RequiredLang>}/>
           <Route path={"desbloquear_insumo"} element={<RequiredLang><UnlockChemical/></RequiredLang>}/>
           <Route path={"actualizar_formulario_proveedor"} element={<RequiredLang><UpdateFormSupplier/></RequiredLang>}/>

@@ -1,14 +1,7 @@
 import React from 'react';
 import {Button} from "@mui/material";
-import {useNavigate} from "react-router-dom";
 
-const ButtonComponent = ({title, url, color}: any) => {
-
-  const navigate = useNavigate();
-  const handleClick = () => {
-    navigate(url);
-  }
-
+const ButtonComponent = ({title, handleClick, color}: any) => {
   return (
     <Button onClick={handleClick} sx={{
       fontSize: "1.6rem",

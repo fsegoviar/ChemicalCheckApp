@@ -5,6 +5,11 @@ import backgroundHome from "./images/backgroundHome.jpg";
 import CategoryComponent from "./components/CategoryComponent";
 import FooterComponent from "../../components/Footer/FooterComponent";
 import { useTranslation } from "react-i18next";
+import imgListChemical from "../ListChemicalRegister/images/fondo_listar_insumo.jpg";
+import imgValidateCAS from "../ValidateCAS/images/fondo_validar_cas.jpg";
+import imgPeriodicVal from "../PeriodicValidation/images/fondo_validacion_periodica.jpg";
+import imgReport from "../Reports/images/fondo_informes.jpg";
+import imgNewChemical from "../RegisterChemical/images/fondo_section_register.jpg";
 
 const BackgroungHome = styled("div")(
   sx({
@@ -35,40 +40,40 @@ const Home = () => {
           }}>
             <Grid item xs={12} md={8} lg={6}>
               <CategoryComponent
-                urlImg='https://images.unsplash.com/photo-1583912267550-d974311a9a6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
+                urlImg={imgListChemical}
                 title={translate("home.listChemicalRegister")}
                 to="/listado_insumos"
               />
             </Grid>
             <Grid item xs={12} md={8} lg={6}>
               <CategoryComponent
-                urlImg='https://images.unsplash.com/photo-1582719471327-5bd41fcf7f7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1372&q=80'
+                urlImg={imgValidateCAS}
                 title={translate("home.validateCAS")}
                 to="/validar_cas"
               />
             </Grid>
             <Grid item xs={12} md={8} lg={6}>
               <CategoryComponent
-                urlImg='https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
+                urlImg={imgPeriodicVal}
                 title={translate("home.periodicValidation")}
                 to="/validacion_periodica"
               />
             </Grid>
             <Grid item xs={12} md={8} lg={6}>
               <CategoryComponent
-                urlImg="https://images.unsplash.com/photo-1576669801775-ff43c5ab079d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+                urlImg={imgReport}
                 title={translate("home.reports")}
                 to="/reportes"
               />
             </Grid>
             <Grid item xs={12} md={8} lg={6}>
               <CategoryComponent
-                urlImg="https://images.unsplash.com/photo-1595500381751-d940898d13a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1856&q=80"
+                urlImg={imgNewChemical}
                 title={translate("home.registerChemical")}
                 to="/registrar_insumo"
               />
             </Grid>
-            <Grid item xs={12} md={8} lg={6}>
+            {/*<Grid item xs={12} md={8} lg={6}>
               <CategoryComponent
                 urlImg="https://images.unsplash.com/photo-1595500381751-d940898d13a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1856&q=80"
                 title={translate("home.unlockChemical")}
@@ -81,7 +86,7 @@ const Home = () => {
                 title={translate("home.updateFormSupplier")}
                 to="/actualizar_formulario_proveedor"
               />
-            </Grid>
+            </Grid>*/}
           </Grid>
         </Container>
       </BackgroungHome>

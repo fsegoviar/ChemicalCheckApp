@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import NavBarComponent from "../../components/NavBar/NavBarComponent";
 import Banner from "../../components/Banner/Banner";
 import FooterComponent from "../../components/Footer/FooterComponent";
@@ -6,12 +6,17 @@ import fondoLab from "./images/fondo_validar_cas.jpg";
 import {Box, Button} from "@mui/material";
 import iconLupa from "../../images/lupa.png";
 import ButtonComponent from "../RegisterChemical/components/ButtonComponent";
-import ListComponent from "../../components/List/ListComponent";
 import {useTranslation} from "react-i18next";
+import ListComponent from "../../components/List/ListComponent";
 
 const ValidateCas = () => {
 
+  const [display, setDisplay] = useState("none");
   const [translate] = useTranslation("global");
+
+  const handleClick = () => {
+    setDisplay("block");
+  }
 
   return (
     <React.Fragment>
@@ -29,10 +34,11 @@ const ValidateCas = () => {
             height: "100%",
             display: "flex",
             flexDirection: "column",
+            justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <Box sx={{display: "flex", alignItems: "center", marginTop:"10vh"}}>
+          <Box sx={{display: "flex", alignItems: "center"}}>
             <input type="text" className="input-validate-CAS" placeholder={translate("validateCAS.input")}/>
             <Button sx={{
               backgroundColor: "green",
@@ -49,11 +55,12 @@ const ValidateCas = () => {
           </Box>
           <Box sx={{
             width: "600px",
-            height: "250px"
+            height: "250px",
+            display: display
           }}>
             <ListComponent />
           </Box>
-          <ButtonComponent title={translate("validateCAS.button")} color={"#20844E"}/>
+          <ButtonComponent title={translate("validateCAS.button")} color={"#20844E"} handleClick={handleClick}/>
         </Box>
       </Box>
       <FooterComponent/>

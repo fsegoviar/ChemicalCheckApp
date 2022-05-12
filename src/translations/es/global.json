@@ -24,7 +24,8 @@
   "periodicValidation": {
     "header": "Validación Periódica",
     "section1": "Análisis anual de laboratorio",
-    "section2": "Análisis por regulaciones"
+    "section2": "Análisis por regulaciones",
+    "section3": "Actualización por datos proveedor"
   },
   "anualAnalysis": {
     "header": "Análisis anual de laboratorio",
@@ -50,7 +51,7 @@
   },
   "newChemical": {
     "header": "Datos para el nuevo registro",
-    "button1": "Enviar al Proveedor"
+    "button1": "Enviar formulario al Proveedor"
   },
   "reviewTicker": {
     "header": "Revisar solicitud",

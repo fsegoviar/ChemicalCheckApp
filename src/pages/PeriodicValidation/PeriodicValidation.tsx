@@ -14,12 +14,11 @@ const PeriodicValidation = () => {
 
   return (
     <React.Fragment>
-      <NavBarComponent displayArrow={"block"} />
-      <Banner title={translate("periodicValidation.header")} />
+      <NavBarComponent displayArrow={"block"}/>
+      <Banner title={translate("periodicValidation.header")}/>
       <Box className={"config-img"} sx={{
         backgroundImage: `url(${fondoLab})`,
         width: "100%",
-        height: "75vh",
         position: "relative"
       }}>
         <Box
@@ -33,24 +32,32 @@ const PeriodicValidation = () => {
           }}
         >
           <Grid container maxWidth={"xl"} direction="row"
-          justifyContent="center"
-          alignItems="center">
-          <Grid item xs={4} sx={{marginRight: "40px"}}>
-            <CardSectionComponent
-              imgDefault={imgDefault}
-              title={translate("periodicValidation.section1")}
-              url={"analisis_anual"}
-            />
+                justifyContent="center"
+                alignItems="center"
+          >
+            <Grid item xs={4} sx={{marginRight: "40px"}}>
+              <CardSectionComponent
+                imgDefault={imgDefault}
+                title={translate("periodicValidation.section1")}
+                url={"analisis_anual"}
+              />
 
+            </Grid>
+            <Grid item xs={4}>
+              <CardSectionComponent
+                imgDefault={imgDefault}
+                title={translate("periodicValidation.section2")}
+                url={"analisis_por_regulaciones"}
+              />
+            </Grid>
+            <Grid item xs={4}>
+              <CardSectionComponent
+                imgDefault={imgDefault}
+                title={translate("periodicValidation.section3")}
+                url={"analisis_por_regulaciones"}
+              />
+            </Grid>
           </Grid>
-          <Grid item xs={4}>
-            <CardSectionComponent
-              imgDefault={imgDefault}
-              title={translate("periodicValidation.section2")}
-              url={"analisis_por_regulaciones"}
-            />
-          </Grid>
-        </Grid>
         </Box>
       </Box>
       <FooterComponent/>

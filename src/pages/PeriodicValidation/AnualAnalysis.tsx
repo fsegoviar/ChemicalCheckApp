@@ -1,17 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import NavBarComponent from "../../components/NavBar/NavBarComponent";
 import Banner from "../../components/Banner/Banner";
 import {Box, Button} from "@mui/material";
 import fondoLab from "./images/fondo_validacion_periodica.jpg";
 import FooterComponent from "../../components/Footer/FooterComponent";
 import iconLupa from "../../images/lupa.png";
-import ListComponent from "../../components/List/ListComponent";
 import ButtonComponent from "../RegisterChemical/components/ButtonComponent";
 import {useTranslation} from "react-i18next";
+import ListComponent from "../../components/List/ListComponent";
 
 const AnualAnalysis = () => {
 
+  const [display, setDisplay] = useState("none");
   const [translate] = useTranslation("global");
+
+  const handleClick = () => {
+    setDisplay("block");
+  }
 
   return (
     <React.Fragment>
@@ -33,9 +38,10 @@ const AnualAnalysis = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          <Box sx={{display: "flex", alignItems: "center", marginTop: "10vh"}}>
+          <Box sx={{display: "flex", alignItems: "center"}}>
             <input type="text" className="input-validate-CAS" placeholder={translate("anualAnalysis.input")}/>
             <Button sx={{
               backgroundColor: "green",
@@ -52,14 +58,15 @@ const AnualAnalysis = () => {
           </Box>
           <Box sx={{
             width: "600px",
-            height: "250px"
+            height: "250px",
+            display: display,
           }}>
             <ListComponent />
           </Box>
           <Box sx={{
             display: "flex",
           }}>
-            <ButtonComponent title={translate("anualAnalysis.button1")} color={"#20844E"}/>
+            <ButtonComponent title={translate("anualAnalysis.button1")} color={"#20844E"} handleClick={handleClick}/>
             <ButtonComponent title={translate("anualAnalysis.button2")} color={"#20844E"}/>
           </Box>
         </Box>

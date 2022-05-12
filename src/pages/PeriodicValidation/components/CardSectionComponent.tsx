@@ -9,6 +9,7 @@ const CardSectionComponent = ({imgDefault, title, url}: any) => {
       display: "flex",
       flexDirection: 'column',
       justifyContent: "center",
+      margin: "20px",
       width: "100%",
       height: "40vh",
       position: "relative",

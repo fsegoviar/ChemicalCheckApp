@@ -1,6 +1,6 @@
 import React from 'react';
 import {Paper} from "@mui/material";
-import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import styled from "@emotion/styled";
 
 const BackgroundOpacity = styled.div`
@@ -14,6 +14,14 @@ const BackgroundOpacity = styled.div`
 `;
 
 const CategoryComponent = ({ urlImg, title, to }: any) => {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(to)
+  }
+
+
   return (
     <Paper
       sx={{
@@ -35,12 +43,10 @@ const CategoryComponent = ({ urlImg, title, to }: any) => {
           transform: "scale(1.05)"
         }
       }}
+      onClick={handleClick}
     >
       <BackgroundOpacity />
-      <h1 style={{zIndex: "1", textAlign: "center"}} ><Link to={to} style={{
-        textDecoration: "none",
-        color: "white",
-      }}>{title}</Link></h1>
+      <h1 style={{zIndex: "1", textAlign: "center", color: "white"}} >{title}</h1>
     </Paper>
   );
 };

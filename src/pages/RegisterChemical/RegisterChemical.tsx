@@ -6,10 +6,20 @@ import fondoLab from "./images/fondo_section_register.jpg";
 import {Box} from "@mui/material";
 import ButtonComponent from "./components/ButtonComponent";
 import {useTranslation} from "react-i18next";
+import {useNavigate} from "react-router-dom";
 
 const RegisterChemical = () => {
 
+  const navigate = useNavigate();
   const [translate] = useTranslation("global");
+
+  const handleClickNewRegister = () =>{
+    navigate("nuevo_registro");
+  }
+
+  const handleClickReviewTicket = () =>{
+    navigate("revisar_solicitud");
+  }
 
   return (
     <React.Fragment>
@@ -43,12 +53,12 @@ const RegisterChemical = () => {
         >
           <ButtonComponent
             title={translate("registerChemical.button1")}
-            url={"nuevo_registro"}
+            handleClick={handleClickNewRegister}
             color={"#92D050"}
           />
           <ButtonComponent
             title={translate("registerChemical.button2")}
-            url={"revisar_solicitud"}
+            handleClick={handleClickReviewTicket}
             color={"#1C7638"}
           />
         </Box>
