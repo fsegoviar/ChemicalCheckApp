@@ -5,12 +5,16 @@ import {Box} from "@mui/material";
 import fondoLab from "./images/fondo_section_register.jpg";
 import FooterComponent from "../../components/Footer/FooterComponent";
 import SimpleButtonComponent from "../../components/Buttons/SimpleButtonComponent";
+import {useTranslation} from "react-i18next";
 
 const ReviewTicket = () => {
+
+  const [translate] = useTranslation("global");
+
   return (
     <React.Fragment>
       <NavBarComponent displayArrow={"block"}/>
-      <Banner title={"Revisar solicitud"}/>
+      <Banner title={translate("reviewTicker.header")}/>
       <Box
         className={"config-img"}
         sx={{
@@ -40,9 +44,9 @@ const ReviewTicket = () => {
             alignItems: "center",
           }}
         >
-          <input type="text" className="input-style" placeholder="Número de ticket" />
+          <input type="text" className="input-style" placeholder={translate("reviewTicker.input")} />
           <SimpleButtonComponent
-            title={"Buscar"}
+            title={translate("reviewTicker.button")}
             color={"#1C7638"}
           />
         </Box>

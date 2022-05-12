@@ -6,12 +6,16 @@ import imgDefault from "../../images/default.jpg";
 import {Box, Grid} from "@mui/material";
 import FooterComponent from "../../components/Footer/FooterComponent";
 import CardSectionComponent from "./components/CardSectionComponent";
+import {useTranslation} from "react-i18next";
 
 const PeriodicValidation = () => {
+
+  const [translate] = useTranslation("global");
+
   return (
     <React.Fragment>
       <NavBarComponent displayArrow={"block"} />
-      <Banner title={"Validación Periódica"} />
+      <Banner title={translate("periodicValidation.header")} />
       <Box className={"config-img"} sx={{
         backgroundImage: `url(${fondoLab})`,
         width: "100%",
@@ -34,7 +38,7 @@ const PeriodicValidation = () => {
           <Grid item xs={4} sx={{marginRight: "40px"}}>
             <CardSectionComponent
               imgDefault={imgDefault}
-              title={"Análisis anual de laboratorio"}
+              title={translate("periodicValidation.section1")}
               url={"analisis_anual"}
             />
 
@@ -42,7 +46,7 @@ const PeriodicValidation = () => {
           <Grid item xs={4}>
             <CardSectionComponent
               imgDefault={imgDefault}
-              title={"Análisis por regulaciones"}
+              title={translate("periodicValidation.section2")}
               url={"analisis_por_regulaciones"}
             />
           </Grid>

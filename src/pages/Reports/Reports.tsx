@@ -7,12 +7,16 @@ import iconLupa from "../../images/lupa.png";
 import {Box, Button} from "@mui/material";
 import ListComponent from "../../components/List/ListComponent";
 import ButtonComponent from "../RegisterChemical/components/ButtonComponent";
+import {useTranslation} from "react-i18next";
 
 const Reports = () => {
+
+  const [translation] = useTranslation("global")
+
   return (
     <React.Fragment>
       <NavBarComponent displayArrow={"block"}/>
-      <Banner title={"Informes"}/>
+      <Banner title={translation("reports.header")}/>
       <Box className={"config-img"} sx={{
         backgroundImage: `url(${fondoLab})`,
         width: "100%",
@@ -29,7 +33,7 @@ const Reports = () => {
           }}
         >
           <Box sx={{display: "flex", alignItems: "center", marginTop: "10vh"}}>
-            <input type="text" className="input-validate-CAS" placeholder="Buscar informes"/>
+            <input type="text" className="input-validate-CAS" placeholder={translation("reports.input")}/>
             <Button sx={{
               backgroundColor: "green",
               backgroundImage: `url(${iconLupa})`,
@@ -49,7 +53,7 @@ const Reports = () => {
           }}>
             <ListComponent />
           </Box>
-          <ButtonComponent title={"Generar informe"} color={"#20844E"}/>
+          <ButtonComponent title={translation("reports.button")} color={"#20844E"}/>
         </Box>
       </Box>
       <FooterComponent />

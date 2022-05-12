@@ -7,11 +7,16 @@ import {Box, Button} from "@mui/material";
 import iconLupa from "../../images/lupa.png";
 import ButtonComponent from "../RegisterChemical/components/ButtonComponent";
 import ListComponent from "../../components/List/ListComponent";
+import {useTranslation} from "react-i18next";
+
 const ValidateCas = () => {
+
+  const [translate] = useTranslation("global");
+
   return (
     <React.Fragment>
       <NavBarComponent displayArrow={"block"}/>
-      <Banner title={"Validar CAS"}/>
+      <Banner title={translate("validateCAS.header")}/>
       <Box className={"config-img"} sx={{
         backgroundImage: `url(${fondoLab})`,
         width: "100%",
@@ -28,7 +33,7 @@ const ValidateCas = () => {
           }}
         >
           <Box sx={{display: "flex", alignItems: "center", marginTop:"10vh"}}>
-            <input type="text" className="input-validate-CAS" placeholder="Número de CAS, ejemplo: SAL"/>
+            <input type="text" className="input-validate-CAS" placeholder={translate("validateCAS.input")}/>
             <Button sx={{
               backgroundColor: "green",
               backgroundImage: `url(${iconLupa})`,
@@ -48,7 +53,7 @@ const ValidateCas = () => {
           }}>
             <ListComponent />
           </Box>
-          <ButtonComponent title={"Validar"} color={"#20844E"}/>
+          <ButtonComponent title={translate("validateCAS.button")} color={"#20844E"}/>
         </Box>
       </Box>
       <FooterComponent/>

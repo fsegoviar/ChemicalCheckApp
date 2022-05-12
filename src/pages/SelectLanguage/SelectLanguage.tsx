@@ -6,14 +6,18 @@ import textoCH from "./images/textoCH.svg";
 import "../../global.css";
 import "./styles.css";
 import {useNavigate} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 const SelectLanguage = () => {
 
   const navigation = useNavigate();
+  const [ , i18n ] = useTranslation();
 
   const handleClick = (e: any) => {
     //Set Language
     localStorage.setItem("language", e)
+    i18n.changeLanguage(String(e));
+
     navigation("/");
   }
 

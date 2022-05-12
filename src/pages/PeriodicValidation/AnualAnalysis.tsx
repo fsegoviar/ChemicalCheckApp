@@ -7,12 +7,16 @@ import FooterComponent from "../../components/Footer/FooterComponent";
 import iconLupa from "../../images/lupa.png";
 import ListComponent from "../../components/List/ListComponent";
 import ButtonComponent from "../RegisterChemical/components/ButtonComponent";
+import {useTranslation} from "react-i18next";
 
 const AnualAnalysis = () => {
+
+  const [translate] = useTranslation("global");
+
   return (
     <React.Fragment>
       <NavBarComponent displayArrow={"block"}/>
-      <Banner title={"Análisis anual de laboratorio"}/>
+      <Banner title={translate("anualAnalysis.header")}/>
       <Box
         className={"config-img"}
         sx={{
@@ -32,7 +36,7 @@ const AnualAnalysis = () => {
           }}
         >
           <Box sx={{display: "flex", alignItems: "center", marginTop: "10vh"}}>
-            <input type="text" className="input-validate-CAS" placeholder="Buscar informes"/>
+            <input type="text" className="input-validate-CAS" placeholder={translate("anualAnalysis.input")}/>
             <Button sx={{
               backgroundColor: "green",
               backgroundImage: `url(${iconLupa})`,
@@ -55,8 +59,8 @@ const AnualAnalysis = () => {
           <Box sx={{
             display: "flex",
           }}>
-            <ButtonComponent title={"Incorporar datos al análisis"} color={"#20844E"}/>
-            <ButtonComponent title={"Carga masiva"} color={"#20844E"}/>
+            <ButtonComponent title={translate("anualAnalysis.button1")} color={"#20844E"}/>
+            <ButtonComponent title={translate("anualAnalysis.button2")} color={"#20844E"}/>
           </Box>
         </Box>
 

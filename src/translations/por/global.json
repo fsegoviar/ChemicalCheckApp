@@ -1,4 +1,66 @@
 {
+  "home": {
+    "listChemicalRegister": "Lista de produtos químicos registrados",
+    "validateCAS": "Validar CAS",
+    "periodicValidation": "Validação periódica",
+    "reports": "Relatórios",
+    "registerChemical": "Registrar novo produto químico",
+    "unlockChemical": "Desbloqueie químico para comprar",
+    "logout": "Sair"
+  },
+  "listChemicalRegister": {
+    "header": "Lista de produtos químicos registrados",
+    "inputCAS": "#CAS",
+    "inputName": "Nome comercial",
+    "inputSAP": "Cod. SAP",
+    "btnSearch": "Procurar"
+  },
+  "validateCAS": {
+    "header": "Validar CAS",
+    "input": "Número CAS, exemplo: SAL",
+    "button": "Validar"
+  },
+  "periodicValidation": {
+    "header": "Validação periódica",
+    "section1": "Análise laboratorial anual",
+    "section2": "Análise por regulamentos"
+  },
+  "anualAnalysis": {
+    "header": "Análise laboratorial anual",
+    "input": "Encontrar relatórios",
+    "button1": "Incorpore dados na análise",
+    "button2": "Carga a granel"
+  },
+  "analysisRegulations": {
+    "header": "Análise por regulamentos",
+    "input": "Encontrar relatórios",
+    "button1": "Incorpore dados na análise"
+  },
+  "reports": {
+    "header": "Relatórios",
+    "input": "Encontrar relatórios",
+    "notFound": "sem registros encontrados",
+    "button": "Gerar relatório"
+  },
+  "registerChemical": {
+    "header": "Registrar novo produto químico / Produto comercial",
+    "button1": "Novo registro",
+    "button2": "Revisar inscrição"
+  },
+  "newChemical": {
+    "header": "Dados para o novo registro",
+    "button1": "Enviar para o provedor"
+  },
+  "reviewTicker": {
+    "header": "Solicitação de revisão",
+    "input": "Número do ticker",
+    "button": "Procurar"
+  },
+  "unlockChemical": {
+    "header": "Desbloqueie suprimentos para compra",
+    "input": "Escolha um item para desbloquear",
+    "button": "Gerar relatório"
+  },
   "login": {
     "title": "Iniciar Sessão",
     "email": "Correio eletrônico",
@@ -9,22 +71,5 @@
     "errorEmailFormat": "O formato de e-mail não está correto",
     "errorPassword": "Senha requerida",
     "errorPasswordFormat": "A senha deve ter pelo menos 2 caracteres"
-  },
-  "register": {
-    "title": "Cadastro de usuário",
-    "name": "Nomes",
-    "errorName": "Nombre requerido",
-    "surname": "Nomes obrigatórios",
-    "errorSurname": "sobrenome obrigatório",
-    "email": "Correio eletrônico",
-    "errorEmail": "O e-mail é obrigatório",
-    "errorEmailFormat": "O formato de e-mail não está correto",
-    "password": "Senha",
-    "errorPassword": "Senha requerida",
-    "errorPasswordFormat": "A senha deve ter pelo menos 2 caracteres",
-    "rpassword": "repetir a senha",
-    "errorRPassword": "Campo obrigatório",
-    "return": "Retorna",
-    "accept": "aceitar"
   }
 }

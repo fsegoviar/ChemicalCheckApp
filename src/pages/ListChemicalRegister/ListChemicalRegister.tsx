@@ -5,12 +5,22 @@ import {Box} from "@mui/material";
 import Banner from "../../components/Banner/Banner";
 import fondoLab from "./images/fondo_listar_insumo.jpg";
 import SimpleButtonComponent from "../../components/Buttons/SimpleButtonComponent";
+import {useTranslation} from "react-i18next";
+import {useNavigate} from "react-router-dom";
 
 const ListChemicalRegister = () => {
+
+  const navigate = useNavigate();
+  const [translate] = useTranslation("global");
+
+  const handleClick = () => {
+    navigate("no_registrado")
+  }
+
   return (
     <React.Fragment>
       <NavBarComponent displayArrow={"block"}/>
-      <Banner title={"Listado insumos registrados"}/>
+      <Banner title={translate("listChemicalRegister.header")}/>
       <Box className={"config-img"} sx={{
         backgroundImage: `url(${fondoLab})`,
         width: "100%",
@@ -36,14 +46,14 @@ const ListChemicalRegister = () => {
               width: "30vw",
             }}
           >
-            <input type="text" className="input-style" placeholder="#CAS" />
+            <input type="text" className="input-style" placeholder={translate("listChemicalRegister.inputCAS")} />
             <input
               type="text"
               className="input-style"
-              placeholder="Nombre Comercial"
+              placeholder={translate("listChemicalRegister.inputName")}
             />
-            <input type="text" className="input-style" placeholder="Cod. SAP" />
-            <SimpleButtonComponent title={"Buscar"} color={"#91BE33"}/>
+            <input type="text" className="input-style" placeholder={translate("listChemicalRegister.inputSAP")} />
+            <SimpleButtonComponent title={translate("listChemicalRegister.btnSearch")} color={"#91BE33"} handleClick={handleClick}/>
           </Box>
         </Box>
 

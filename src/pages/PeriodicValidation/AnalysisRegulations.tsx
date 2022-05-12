@@ -7,12 +7,16 @@ import fondoLab from "./images/fondo_validacion_periodica.jpg";
 import iconLupa from "../../images/lupa.png";
 import ListComponent from "../../components/List/ListComponent";
 import ButtonComponent from "../RegisterChemical/components/ButtonComponent";
+import {useTranslation} from "react-i18next";
 
 const AnalysisRegulations = () => {
+
+  const [translate] = useTranslation("global");
+
   return (
     <React.Fragment>
       <NavBarComponent displayArrow={"block"}/>
-      <Banner title={"Análisis por regulaciones"}/>
+      <Banner title={translate("analysisRegulations.header")}/>
       <Box
         className={"config-img"}
         sx={{
@@ -32,7 +36,7 @@ const AnalysisRegulations = () => {
           }}
         >
           <Box sx={{display: "flex", alignItems: "center", marginTop: "10vh"}}>
-            <input type="text" className="input-validate-CAS" placeholder="Buscar informes"/>
+            <input type="text" className="input-validate-CAS" placeholder={translate("analysisRegulations.input")}/>
             <Button sx={{
               backgroundColor: "green",
               backgroundImage: `url(${iconLupa})`,
@@ -55,7 +59,7 @@ const AnalysisRegulations = () => {
           <Box sx={{
             display: "flex",
           }}>
-            <ButtonComponent title={"Incorporar datos al análisis"} color={"#20844E"}/>
+            <ButtonComponent title={translate("analysisRegulations.button1")} color={"#20844E"}/>
           </Box>
         </Box>
       </Box>

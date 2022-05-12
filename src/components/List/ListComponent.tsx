@@ -1,7 +1,11 @@
 import React from 'react';
 import {Box, Typography} from "@mui/material";
+import {useTranslation} from "react-i18next";
 
 const ListComponent = () => {
+
+  const [translation] = useTranslation("global");
+
   return (
     <Box sx={{
       backgroundColor:"#91BE33",
@@ -13,7 +17,7 @@ const ListComponent = () => {
       justifyContent: "center",
       alignItems: "center"
     }}>
-      <Typography variant={"h6"} color={"white"} style={{fontWeight: "bold"}}>No se han encontrado registros</Typography>
+      <Typography variant={"h6"} color={"white"} style={{fontWeight: "bold"}}>{translation("reports.notFound")}</Typography>
     </Box>
   );
 };

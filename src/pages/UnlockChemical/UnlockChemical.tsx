@@ -7,12 +7,16 @@ import FooterComponent from "../../components/Footer/FooterComponent";
 import iconLupa from "../../images/lupa.png";
 import ListComponent from "../../components/List/ListComponent";
 import ButtonComponent from "../RegisterChemical/components/ButtonComponent";
+import {useTranslation} from "react-i18next";
 
 const UnlockChemical = () => {
+
+  const [translate] = useTranslation("global");
+
   return (
     <React.Fragment>
       <NavBarComponent displayArrow={"block"}/>
-      <Banner title={"Desbloquear insumos para compra"}/>
+      <Banner title={translate("unlockChemical.header")}/>
       <Box className={"config-img"} sx={{
         backgroundImage: `url(${fondoLab})`,
         width: "100%",
@@ -29,7 +33,7 @@ const UnlockChemical = () => {
           }}
         >
           <Box sx={{display: "flex", alignItems: "center", marginTop: "10vh"}}>
-            <input type="text" className="input-validate-CAS" placeholder="Elige un insumo para desbloquear"/>
+            <input type="text" className="input-validate-CAS" placeholder={translate("unlockChemical.input")}/>
             <Button sx={{
               backgroundColor: "green",
               backgroundImage: `url(${iconLupa})`,
@@ -49,7 +53,7 @@ const UnlockChemical = () => {
           }}>
             <ListComponent />
           </Box>
-          <ButtonComponent title={"Generar informe"} color={"#20844E"}/>
+          <ButtonComponent title={translate("unlockChemical.button")} color={"#20844E"}/>
         </Box>
       </Box>
       <FooterComponent />

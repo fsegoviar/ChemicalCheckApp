@@ -5,12 +5,16 @@ import {Box, Typography} from "@mui/material";
 import fondoNuevoInsumo from "./images/fondo_nuevo_insumo.jpg";
 import FooterComponent from "../../components/Footer/FooterComponent";
 import SimpleButtonComponent from "../../components/Buttons/SimpleButtonComponent";
+import {useTranslation} from "react-i18next";
 
 const NewChemical = () => {
+
+  const [translate] = useTranslation("global");
+
   return (
     <React.Fragment>
       <NavBarComponent displayArrow={"block"}/>
-      <Banner title={"Revisar solicitud"}/>
+      <Banner title={translate("newChemical.header")}/>
       <Box
         className={"config-img"}
         sx={{
@@ -53,7 +57,7 @@ const NewChemical = () => {
             <Typography variant={"h3"} color={"white"}>Formulario</Typography>
           </Box>
           <SimpleButtonComponent
-            title={"Enviar al proveedor"}
+            title={translate("newChemical.button1")}
             color={"#1C7638"}
           />
         </Box>
