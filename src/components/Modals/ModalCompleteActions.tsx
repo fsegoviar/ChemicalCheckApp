@@ -28,7 +28,7 @@ const ModalCompleteActions = ({title}: any) => {
       }}></Box>
       <Typography variant={"h3"} sx={{
         color: "#6F6E72",
-        fontWeight: "bold"
+        fontWeight: "bold",
       }}>{title}</Typography>
       <Box sx={{
         width: "50%",

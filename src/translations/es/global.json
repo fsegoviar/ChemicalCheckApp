@@ -23,9 +23,9 @@
   },
   "periodicValidation": {
     "header": "Validación Periódica",
-    "section1": "Actualización anual de laboratorio",
+    "section1": "Actualización análisis de laboratorio",
     "section2": "Actualización por regulaciones",
-    "section3": "Actualización por datos proveedor"
+    "section3": "Actualización por datos de insumo"
   },
   "anualAnalysis": {
     "header": "Actualización anual de laboratorio",
@@ -36,7 +36,12 @@
   "analysisRegulations": {
     "header": "Actualización por regulaciones",
     "input": "Elige un insumo...Ejemplo Sal",
-    "button1": "Incorporar datos al análisis"
+    "button1": "Incorporar datos regulaciones"
+  },
+  "updateRegulations": {
+    "header": "Actualización por insumos",
+    "input": "Elige un insumo...Ejemplo Sal",
+    "button1": "Incorporar datos insumo"
   },
   "loadMasive": {
     "header": "Carga Masiva"

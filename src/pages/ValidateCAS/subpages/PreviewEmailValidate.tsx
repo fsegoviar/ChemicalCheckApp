@@ -35,58 +35,12 @@ const PreviewEmailValidate = () => {
         }}>
           <Box sx={{
             width: "40%",
-            height: "400px",
-            overflowY: "scroll",
+            height: "auto",
             border: "2px solid #90BC1F",
             borderRadius: "10px",
             boxSizing: "border-box",
             padding: "50px",
           }}>
-            <Typography variant={"h6"} style={{
-              color: "#90BC1F",
-              fontWeight: "bold"
-            }}>Insumo: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>xxxx</p>
-            </Typography>
-            <Typography variant={"h6"} style={{
-              color: "#90BC1F",
-              fontWeight: "bold"
-            }}>Proveedor: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>xxxx</p>
-            </Typography>
-            <Typography variant={"h6"} style={{
-              color: "#90BC1F",
-              fontWeight: "bold"
-            }}>Fecha creación / Registro: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>16/03/2021</p>
-            </Typography>
-            <Typography variant={"h6"} style={{
-              color: "#90BC1F",
-              fontWeight: "bold"
-            }}>Estado: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>Aprobado</p>
-            </Typography>
-            <Typography variant={"h6"} style={{
-              color: "#90BC1F",
-              fontWeight: "bold"
-            }}>Contacto directo con fibra: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>No</p>
-            </Typography>
-            <Typography variant={"h6"} style={{
-              color: "#90BC1F",
-              fontWeight: "bold"
-            }}>Plantas que utilizan: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>xxxx</p>
-            </Typography>
-            <Typography variant={"h6"} style={{
-              color: "#90BC1F",
-              fontWeight: "bold"
-            }}>Producto que utilizan: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>xxxx</p>
-            </Typography>
-            <Typography variant={"h6"} style={{
-              color: "#90BC1F",
-              fontWeight: "bold"
-            }}>Línea de producción: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>xxxx</p>
-            </Typography>
-            <Typography variant={"h6"} style={{
-              color: "#90BC1F",
-              fontWeight: "bold"
-            }}>Fecha última Revisión: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>01/12/2021</p>
-            </Typography>
             <Typography variant={"h6"} style={{
               color: "#90BC1F",
               fontWeight: "bold"

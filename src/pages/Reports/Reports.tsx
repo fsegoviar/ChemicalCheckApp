@@ -4,7 +4,7 @@ import Banner from "../../components/Banner/Banner";
 import FooterComponent from "../../components/Footer/FooterComponent";
 import fondoLab from "./images/fondo_informes.jpg";
 import iconLupa from "../../images/lupa.png";
-import {Box, Button, Checkbox, FormControl, FormControlLabel, FormGroup} from "@mui/material";
+import {Box, Button, FormControl, FormControlLabel, Radio, RadioGroup} from "@mui/material";
 import ButtonComponent from "../RegisterChemical/components/ButtonComponent";
 import {useTranslation} from "react-i18next";
 import {useNavigate} from "react-router-dom";
@@ -19,14 +19,13 @@ const Reports = () => {
   }*/
 
 
-  const [state, setState] = React.useState({
-    inform1: false,
-    inform2: false,
-    inform3: false,
-    inform4: false,
-    inform5: false,
-    inform6: false,
-    inform7: false,
+  const [state] = React.useState({
+    inform1: "Declaraciones de regulaciones (cuales están en cumplimiento) por producto final celulosa, CAS, insumo y código SAP",
+    inform2: "Informe en rangos límites por sustancia e insumos según regulación",
+    inform3: "Informe por producto según regulación informando concentración límite de regulación y concentración encontrada en el producto de cada sustancia",
+    inform4: "Informe por planta sobre insumos utilizados que no están en contacto con la fibra",
+    inform5: "Informe de insumo, dosificación del insumo y cumplimiento por regulación y por producto",
+    inform6: "Informe de no cumplimiento de insumo // informe de insumos bloqueados",
   });
 
   const {
@@ -36,15 +35,8 @@ const Reports = () => {
     inform4,
     inform5,
     inform6,
-    inform7,
   } = state;
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setState({
-      ...state,
-      [event.target.name]: event.target.checked,
-    });
-  };
 
   const handleClick = () => {
     navigate("/resultado_reportes");
@@ -70,7 +62,7 @@ const Reports = () => {
             justifyContent: "center"
           }}
         >
-          <Box sx={{display: "flex", alignItems: "center"}}>
+          <Box sx={{display: "flex", alignItems: "center", justifyContent: "center", width: "100%", maxWidth: "620px"}}>
             <input type="text" className="input-validate-CAS" placeholder={translation("reports.input")}/>
             <Button sx={{
               backgroundColor: "green",
@@ -90,12 +82,12 @@ const Reports = () => {
             height: "250px",
           }}>
             <Box sx={{
-              backgroundColor: "#91BE33",
+              backgroundColor: "#FFFFFF",
               width: "100%",
               height: "auto",
               maxHeight: "400px",
               overflowY: "scroll",
-              border: "2px solid white",
+              border: "2px solid #91BE33",
               boxSizing: "border-box",
               borderRadius: 5,
               display: "flex",
@@ -104,51 +96,56 @@ const Reports = () => {
               alignItems: "center"
             }}>
               {/*<Typography variant={"h6"} color={"white"} style={{fontWeight: "bold"}}>{translation("reports.notFound")}</Typography>*/}
-              <FormControl sx={{m: 3}} component="fieldset" variant="standard">
-                <FormGroup>
+              <FormControl sx={{m: 3, paddingTop: "60px"}} component="fieldset" variant="standard">
+                <RadioGroup>
                   <FormControlLabel
+                    value={inform1}
                     control={
-                      <Checkbox checked={inform1} color="primary" onChange={handleChange} name="inform1"/>
+                      <Radio color="success"/>
                     }
                     label="Declaraciones de regulaciones (cuales están en cumplimiento) por producto final celulosa, CAS, insumo y código SAP"
                   />
+                  <hr/>
                   <FormControlLabel
+                    value={inform2}
                     control={
-                      <Checkbox checked={inform2} color="primary" onChange={handleChange} name="inform2"/>
+                      <Radio color="success"/>
                     }
                     label="Informe en rangos límites por sustancia e insumos según regulación"
                   />
+                  <hr/>
                   <FormControlLabel
+                    value={inform3}
                     control={
-                      <Checkbox checked={inform3} color="primary" onChange={handleChange} name="inform3"/>
+                      <Radio color="success"/>
                     }
-                    label="Informe por producto según regulación informando"
+                    label="Informe por producto según regulación informando concentración límite de regulación y concentración encontrada en el producto de cada sustancia"
                   />
+                  <hr/>
                   <FormControlLabel
+                    value={inform4}
                     control={
-                      <Checkbox checked={inform4} color="primary" onChange={handleChange} name="inform4"/>
-                    }
-                    label="Concentración límite de regulación y concentración encontrada en el producto de cada sustancia"
-                  />
-                  <FormControlLabel
-                    control={
-                      <Checkbox checked={inform5} color="primary" onChange={handleChange} name="inform5"/>
+                      <Radio color="success"/>
                     }
                     label="Informe por planta sobre insumos utilizados que no están en contacto con la fibra"
                   />
+                  <hr/>
                   <FormControlLabel
+                    value={inform5}
                     control={
-                      <Checkbox checked={inform6} color="primary" onChange={handleChange} name="inform6"/>
+                      <Radio color="success"/>
                     }
                     label="Informe de insumo, dosificación del insumo y cumplimiento por regulación y por producto"
                   />
+                  <hr/>
                   <FormControlLabel
+                    value={inform6}
                     control={
-                      <Checkbox checked={inform7} color="primary" onChange={handleChange} name="inform7"/>
+                      <Radio color="success"/>
                     }
                     label="Informe de no cumplimiento de insumo // informe de insumos bloqueados"
                   />
-                </FormGroup>
+                </RadioGroup>
               </FormControl>
             </Box>
           </Box>

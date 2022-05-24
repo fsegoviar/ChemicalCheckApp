@@ -31,6 +31,7 @@ import EmailApproved from "./pages/ListChemicalRegister/subpages/EmailApproved";
 import ApprovedValidation from "./pages/ValidateCAS/subpages/ApprovedValidation";
 import PreviewEmailValidate from "./pages/ValidateCAS/subpages/PreviewEmailValidate";
 import EmailApprovedValidation from "./pages/ValidateCAS/subpages/EmailApprovedValidation";
+import {UpdateDataSupplier} from "./pages/PeriodicValidation/UpdateDataSupplier";
 
 function App() {
   //Translation
@@ -71,6 +72,8 @@ function App() {
           <Route path={"validacion_periodica/analisis_anual"} element={<RequiredLang><AnualAnalysis/></RequiredLang>}/>
           <Route path={"validacion_periodica/analisis_por_regulaciones"}
                  element={<RequiredLang><AnalysisRegulations/></RequiredLang>}/>
+          <Route path={"validacion_periodica/actualizar_insumos"}
+                 element={<RequiredLang><UpdateDataSupplier/></RequiredLang>}/>
           <Route path={"carga_masiva"}
                  element={<RequiredLang><LoadMasive/></RequiredLang>}/>
           <Route path={"info_carga_masiva"}

@@ -53,7 +53,7 @@ const PeriodicValidation = () => {
           <Grid item xs={4}>
             <CardSectionComponent
               title={translate("periodicValidation.section3")}
-              url={"analisis_por_regulaciones"}
+              url={"actualizar_insumos"}
             />
           </Grid>
         </Grid>

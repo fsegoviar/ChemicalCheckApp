@@ -16,6 +16,7 @@ const CardSectionComponent = ({title, url}: any) => {
       display: "flex",
       flexDirection: 'column',
       justifyContent: "center",
+      alignItems: "center",
       margin: "20px",
       width: "100%",
       height: "40vh",
@@ -28,6 +29,7 @@ const CardSectionComponent = ({title, url}: any) => {
     }} onClick={handleClick}>
       <Typography variant={"h4"} sx={{
         zIndex: "1",
+        width: "80%",
         textAlign: "center",
         color: "white",
         fontWeight: "bold"

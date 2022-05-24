@@ -23,9 +23,9 @@
   },
   "periodicValidation": {
     "header": "Validação periódica",
-    "section1": "Atualização laboratorial anual",
+    "section1": "Atualização de análise laboratorial",
     "section2": "Atualização por regulamentos",
-    "section3": "Atualização por dados do fornecedor"
+    "section3": "Atualizando por dados de entrada"
   },
   "anualAnalysis": {
     "header": "Atualização laboratorial anual",
@@ -36,7 +36,12 @@
   "analysisRegulations": {
     "header": "Atualização por regulamentos",
     "input": "escolha uma entrada",
-    "button1": "Incorpore dados na análise"
+    "button1": "Incorporar dados regulatórios"
+  },
+  "updateRegulations": {
+    "header": "Atualizando por entradas",
+    "input": "escolha uma entrada",
+    "button1": "Incorporar dados de entrada"
   },
   "loadMasive": {
     "header": "Carregar vários dados"

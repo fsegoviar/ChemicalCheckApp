@@ -51,7 +51,8 @@ const InfoLoadMasive = () => {
               color: "#FFFFFF",
               textAlign: "center",
               fontWeight: "bold",
-              marginBottom: "30px"
+              marginBottom: "30px",
+              width: "80%"
 
             }}>LA CARGA DE DATOS SE HA REALIZADO CON ÉXITO.</Typography>
 
