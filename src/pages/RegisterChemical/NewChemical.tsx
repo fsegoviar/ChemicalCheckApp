@@ -255,9 +255,7 @@ const NewChemical = () => {
                 <FormControl sx={{m: 1, width: 300, mt: 3}}>
                   <Box hidden={hiddenStep4}>
                     <Typography variant={"h6"}
-                                style={{color: "#FFFFFF", fontWeight: "bold", textShadow: "3px 3px #939393"}}>Contacto
-                      con
-                      fibra
+                                style={{color: "#FFFFFF", fontWeight: "bold", textShadow: "3px 3px #939393"}}>Dosificación
                     </Typography>
                     <TextField id="outlined-basic" type={"number"} variant="outlined" sx={{
                       backgroundColor: "#96BC60",
