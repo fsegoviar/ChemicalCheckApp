@@ -6,14 +6,19 @@ const ListComponent = () => {
 
   const [translation] = useTranslation("global");
 
+
   return (
     <Box sx={{
       backgroundColor:"#91BE33",
       width: "100%",
-      height: "100%",
+      height: "250px",
+      maxHeight: "400px",
+      overflowY: "scroll",
       border: "2px solid white",
+      boxSizing: "border-box",
       borderRadius: 5,
       display: "flex",
+      position: "relative",
       justifyContent: "center",
       alignItems: "center"
     }}>

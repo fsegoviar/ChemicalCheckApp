@@ -1,16 +1,22 @@
-.config-img{
+html {
+    height: 100%;
+}
+
+.config-img {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.unstyle-link{
+.unstyle-link {
     color: #FFFFFF;
-    text-decoration:none;
+    text-decoration: none;
 }
 
-.unstyle-link:link, .unstyle-link:visited, .unstyle-link:active{
-    text-decoration:none;
+.unstyle-link:link,
+.unstyle-link:visited,
+.unstyle-link:active {
+    text-decoration: none;
 }
 
 ::-webkit-input-placeholder {
@@ -18,12 +24,14 @@
     font-weight: bold;
 }
 
-:-moz-placeholder { /* Firefox 18- */
+:-moz-placeholder {
+    /* Firefox 18- */
     text-align: center;
     font-weight: bold;
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
+::-moz-placeholder {
+    /* Firefox 19+ */
     text-align: center;
     font-weight: bold;
 }
@@ -33,7 +41,37 @@
     font-weight: bold;
 }
 
-.input-style{
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #3F9370;
+    border-radius: 10px;
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #FFFFFF;
+}
+
+.input-style {
     margin: 10px;
     width: 20vw;
     border: 3px solid #91BE33;
@@ -43,7 +81,7 @@
     font-size: 2rem;
 }
 
-.input-validate-CAS{
+.input-validate-CAS {
     margin: 10px;
     width: 30vw;
     border: 3px solid #91BE33;
@@ -53,7 +91,7 @@
     border-radius: 10px;
 }
 
-.btn-search{
+.btn-search {
     margin: 10px;
     border: none;
     width: 10vw;
@@ -63,4 +101,42 @@
     border-radius: 50px;
     color: white;
     background-color: #91BE33;
+}
+
+.label-form {
+    color: #FFFFFF;
+    display: block;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-bottom: 5px;
+}
+
+.input-form {
+    background-color: #8DB763;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: 1.3rem;
+}
+
+.input-form-lock {
+    background-color: #7a7a7a;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: 1.3rem;
+    cursor: text;
+}
+
+.input-form:active,
+.input-form:focus {
+    border: 2px solid #FFFFFF;
 }

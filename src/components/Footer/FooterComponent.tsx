@@ -5,11 +5,12 @@ import logoCMPC from "../../images/Logocmpc_blanco.svg";
 const Footer = styled("div")(
   sx({
     width: "100%",
-    height: "10vh",
     backgroundColor: "#298854",
     position:"relative",
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
+    padding:"10px",
+    boxSizing: "border-box"
   })
 );
 

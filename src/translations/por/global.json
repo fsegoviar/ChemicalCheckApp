@@ -23,20 +23,23 @@
   },
   "periodicValidation": {
     "header": "Validação periódica",
-    "section1": "Análise laboratorial anual",
-    "section2": "Análise por regulamentos",
+    "section1": "Atualização laboratorial anual",
+    "section2": "Atualização por regulamentos",
     "section3": "Atualização por dados do fornecedor"
   },
   "anualAnalysis": {
-    "header": "Análise laboratorial anual",
-    "input": "Encontrar relatórios",
+    "header": "Atualização laboratorial anual",
+    "input": "escolha uma entrada",
     "button1": "Incorpore dados na análise",
     "button2": "Carga a granel"
   },
   "analysisRegulations": {
-    "header": "Análise por regulamentos",
-    "input": "Encontrar relatórios",
+    "header": "Atualização por regulamentos",
+    "input": "escolha uma entrada",
     "button1": "Incorpore dados na análise"
+  },
+  "loadMasive": {
+    "header": "Carregar vários dados"
   },
   "reports": {
     "header": "Relatórios",
@@ -55,7 +58,7 @@
   },
   "reviewTicker": {
     "header": "Solicitação de revisão",
-    "input": "Número do ticker",
+    "input": "Número do inscrição",
     "button": "Procurar"
   },
   "unlockChemical": {

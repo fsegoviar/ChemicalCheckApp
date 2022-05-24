@@ -14,7 +14,7 @@ const ListChemicalRegister = () => {
   const [translate] = useTranslation("global");
 
   const handleClick = () => {
-    navigate("no_registrado")
+    navigate("registrado")
   }
 
   return (

@@ -8,14 +8,20 @@ import iconLupa from "../../images/lupa.png";
 import ButtonComponent from "../RegisterChemical/components/ButtonComponent";
 import {useTranslation} from "react-i18next";
 import ListComponent from "../../components/List/ListComponent";
+import {useNavigate} from "react-router-dom";
 
 const AnualAnalysis = () => {
 
   const [display, setDisplay] = useState("none");
   const [translate] = useTranslation("global");
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setDisplay("block");
+  }
+
+  const handleLoadMasive = () => {
+    navigate("/carga_masiva")
   }
 
   return (
@@ -67,7 +73,7 @@ const AnualAnalysis = () => {
             display: "flex",
           }}>
             <ButtonComponent title={translate("anualAnalysis.button1")} color={"#20844E"} handleClick={handleClick}/>
-            <ButtonComponent title={translate("anualAnalysis.button2")} color={"#20844E"}/>
+            <ButtonComponent title={translate("anualAnalysis.button2")} color={"#20844E"} handleClick={handleLoadMasive}/>
           </Box>
         </Box>
 

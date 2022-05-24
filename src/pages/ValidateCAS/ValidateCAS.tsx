@@ -8,14 +8,20 @@ import iconLupa from "../../images/lupa.png";
 import ButtonComponent from "../RegisterChemical/components/ButtonComponent";
 import {useTranslation} from "react-i18next";
 import ListComponent from "../../components/List/ListComponent";
+import {useNavigate} from "react-router-dom";
 
 const ValidateCas = () => {
 
   const [display, setDisplay] = useState("none");
   const [translate] = useTranslation("global");
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setDisplay("block");
+  }
+
+  const handleNavigate = () => {
+    navigate("insumo_validado")
   }
 
   return (
@@ -51,7 +57,7 @@ const ValidateCas = () => {
               "&:hover": {
                 backgroundColor: "#91BE33"
               }
-            }}></Button>
+            }} onClick={handleClick}></Button>
           </Box>
           <Box sx={{
             width: "600px",
@@ -60,7 +66,7 @@ const ValidateCas = () => {
           }}>
             <ListComponent />
           </Box>
-          <ButtonComponent title={translate("validateCAS.button")} color={"#20844E"} handleClick={handleClick}/>
+          <ButtonComponent title={translate("validateCAS.button")} color={"#20844E"} handleClick={handleNavigate}/>
         </Box>
       </Box>
       <FooterComponent/>

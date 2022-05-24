@@ -23,20 +23,23 @@
   },
   "periodicValidation": {
     "header": "Validación Periódica",
-    "section1": "Análisis anual de laboratorio",
-    "section2": "Análisis por regulaciones",
+    "section1": "Actualización anual de laboratorio",
+    "section2": "Actualización por regulaciones",
     "section3": "Actualización por datos proveedor"
   },
   "anualAnalysis": {
-    "header": "Análisis anual de laboratorio",
-    "input": "Buscar informes",
+    "header": "Actualización anual de laboratorio",
+    "input": "Elige un insumo...Ejemplo Sal",
     "button1": "Incorporar datos al análisis",
     "button2": "Carga masiva"
   },
   "analysisRegulations": {
-    "header": "Análisis por regulaciones",
-    "input": "Buscar informes",
+    "header": "Actualización por regulaciones",
+    "input": "Elige un insumo...Ejemplo Sal",
     "button1": "Incorporar datos al análisis"
+  },
+  "loadMasive": {
+    "header": "Carga Masiva"
   },
   "reports": {
     "header": "Informes",
@@ -55,7 +58,7 @@
   },
   "reviewTicker": {
     "header": "Revisar solicitud",
-    "input": "Número de ticker",
+    "input": "Número de solicitud",
     "button": "Buscar"
   },
   "unlockChemical": {

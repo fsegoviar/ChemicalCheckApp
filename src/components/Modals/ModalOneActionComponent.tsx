@@ -22,6 +22,7 @@ const ModalOneActionComponent = (props: PropsModal) => {
     }}>
       <Box className={"config-img"} sx={{
         backgroundImage: `url(${props.img})`,
+        backgroundSize: "contain",
         width: "50%",
         height: "50%"
       }}></Box>

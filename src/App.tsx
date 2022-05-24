@@ -21,6 +21,16 @@ import OptionsRegister from "./pages/ListChemicalRegister/subpages/OptionsRegist
 import RequiredLang from "./route/RequiredLang";
 import UpdateFormSupplier from "./pages/UpdateFormSupplier/UpdateFormSupplier";
 import SearchSupplier from "./pages/RegisterChemical/SearchSupplier";
+import LoadMasive from "./pages/PeriodicValidation/LoadMasive";
+import InfoLoadMasive from "./pages/PeriodicValidation/components/InfoLoadMasive";
+import ResultLoadMasive from "./pages/PeriodicValidation/subpages/ResultLoadMasive";
+import ResponseReport from "./pages/Reports/subpages/ResponseReport";
+import IsRegister from "./pages/ListChemicalRegister/subpages/IsRegister";
+import PreviewEmailChemical from "./pages/ListChemicalRegister/subpages/PreviewEmailChemical";
+import EmailApproved from "./pages/ListChemicalRegister/subpages/EmailApproved";
+import ApprovedValidation from "./pages/ValidateCAS/subpages/ApprovedValidation";
+import PreviewEmailValidate from "./pages/ValidateCAS/subpages/PreviewEmailValidate";
+import EmailApprovedValidation from "./pages/ValidateCAS/subpages/EmailApprovedValidation";
 
 function App() {
   //Translation
@@ -49,13 +59,26 @@ function App() {
           <Route path={"/"} element={<RequiredLang><Home/></RequiredLang>}/>
           <Route path={"listado_insumos"} element={<RequiredLang><ListChemicalRegister/></RequiredLang>}/>
           <Route path={"listado_insumos/no_registrado"} element={<RequiredLang><NoRegister/></RequiredLang>}/>
+          <Route path={"listado_insumos/registrado"} element={<RequiredLang><IsRegister/></RequiredLang>}/>
+          <Route path={"listado_insumos/visualizacion_correo"} element={<RequiredLang><PreviewEmailChemical/></RequiredLang>}/>
+          <Route path={"listado_insumos/correo_enviado"} element={<RequiredLang><EmailApproved/></RequiredLang>}/>
           <Route path={"listado_insumos/opcion_registro"} element={<RequiredLang><OptionsRegister/></RequiredLang>}/>
           <Route path={"validar_cas"} element={<RequiredLang><ValidateCAS/></RequiredLang>}/>
+          <Route path={"validar_cas/insumo_validado"} element={<RequiredLang><ApprovedValidation/></RequiredLang>}/>
+          <Route path={"validar_cas/visualizacion_correo"} element={<RequiredLang><PreviewEmailValidate/></RequiredLang>}/>
+          <Route path={"validar_cas/correo_enviado"} element={<RequiredLang><EmailApprovedValidation/></RequiredLang>}/>
           <Route path={"validacion_periodica"} element={<RequiredLang><PeriodicValidation/></RequiredLang>}/>
           <Route path={"validacion_periodica/analisis_anual"} element={<RequiredLang><AnualAnalysis/></RequiredLang>}/>
           <Route path={"validacion_periodica/analisis_por_regulaciones"}
                  element={<RequiredLang><AnalysisRegulations/></RequiredLang>}/>
+          <Route path={"carga_masiva"}
+                 element={<RequiredLang><LoadMasive/></RequiredLang>}/>
+          <Route path={"info_carga_masiva"}
+                 element={<RequiredLang><InfoLoadMasive/></RequiredLang>}/>
+          <Route path={"resultado_carga_masiva"}
+                 element={<RequiredLang><ResultLoadMasive/></RequiredLang>}/>
           <Route path={"reportes"} element={<RequiredLang> <Reports/></RequiredLang>}/>
+          <Route path={"resultado_reportes"} element={<RequiredLang> <ResponseReport/></RequiredLang>}/>
           <Route path={"registrar_insumo"} element={<RequiredLang><RegisterChemical/></RequiredLang>}/>
           <Route path={"registrar_insumo/nuevo_registro"} element={<RequiredLang><NewChemical/></RequiredLang>}/>
           <Route path={"registrar_insumo/nuevo_registro/buscar_proveedor"} element={<RequiredLang><SearchSupplier/></RequiredLang>}/>

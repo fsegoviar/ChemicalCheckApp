@@ -36,20 +36,20 @@ const SearchSupplier = () => {
           }}
         >
           <Box sx={{display: "flex", alignItems: "center"}}>
-            <input type="text" className="input-validate-CAS" placeholder="Email del proveedor"/>
-            <Button sx={{
-              backgroundColor: "green",
-              backgroundImage: `url(${iconLupa})`,
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-              width: "50px",
-              height: "50px",
-              "&:hover": {
-                backgroundColor: "#91BE33"
-              }
-            }}></Button>
-          </Box>
+          <input type="text" className="input-validate-CAS" placeholder="Email del proveedor"/>
+          <Button sx={{
+            backgroundColor: "green",
+            backgroundImage: `url(${iconLupa})`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            width: "50px",
+            height: "50px",
+            "&:hover": {
+              backgroundColor: "#91BE33"
+            }
+          }}></Button>
+        </Box>
           <Box sx={{
             width: "350px",
             height: "250px",
