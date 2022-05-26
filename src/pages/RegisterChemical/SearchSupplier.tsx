@@ -87,7 +87,7 @@ const SearchSupplier = () => {
               </FormControl>
             </Box>
           </Box>
-          <ButtonComponent title="validar" color={"#91BE33"} handleClick={handleClick}/>
+          <ButtonComponent title="Enviar" color={"#91BE33"} handleClick={handleClick}/>
         </Box>
       </Box>
       <FooterComponent/>

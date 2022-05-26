@@ -11,8 +11,7 @@ const ListComponent = () => {
     <Box sx={{
       backgroundColor:"#91BE33",
       width: "100%",
-      height: "250px",
-      maxHeight: "400px",
+      height: "100px",
       overflowY: "scroll",
       border: "2px solid white",
       boxSizing: "border-box",

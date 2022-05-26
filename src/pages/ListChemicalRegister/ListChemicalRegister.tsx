@@ -1,12 +1,14 @@
 import React from 'react';
 import NavBarComponent from "../../components/NavBar/NavBarComponent";
 import FooterComponent from "../../components/Footer/FooterComponent";
-import {Box} from "@mui/material";
+import {Box, IconButton, Tooltip} from "@mui/material";
 import Banner from "../../components/Banner/Banner";
 import fondoLab from "./images/fondo_listar_insumo.jpg";
 import SimpleButtonComponent from "../../components/Buttons/SimpleButtonComponent";
 import {useTranslation} from "react-i18next";
 import {useNavigate} from "react-router-dom";
+import HelpIcon from "@mui/icons-material/Help";
+
 
 const ListChemicalRegister = () => {
 
@@ -46,14 +48,37 @@ const ListChemicalRegister = () => {
               width: "30vw",
             }}
           >
-            <input type="text" className="input-style" placeholder={translate("listChemicalRegister.inputCAS")} />
-            <input
-              type="text"
-              className="input-style"
-              placeholder={translate("listChemicalRegister.inputName")}
-            />
-            <input type="text" className="input-style" placeholder={translate("listChemicalRegister.inputSAP")} />
-            <SimpleButtonComponent title={translate("listChemicalRegister.btnSearch")} color={"#91BE33"} handleClick={handleClick}/>
+            <Box sx={{ display: "flex"}}>
+              <input type="text" className="input-style" placeholder={translate("listChemicalRegister.inputCAS")} />
+              <Tooltip title="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx">
+                <IconButton>
+                  <HelpIcon sx={{ backgroundColor: "#FFFFFF", borderRadius: 50, height: "50px", width: "50px"}} color="success" />
+                </IconButton>
+              </Tooltip>
+            </Box>
+            <Box sx={{ display: "flex"}}>
+              <input
+                type="text"
+                className="input-style"
+                placeholder={translate("listChemicalRegister.inputName")}
+              />
+              <Tooltip title="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx">
+                <IconButton>
+                  <HelpIcon sx={{ backgroundColor: "#FFFFFF", borderRadius: 50, height: "50px", width: "50px"}} color="success" />
+                </IconButton>
+              </Tooltip>
+            </Box>
+            <Box sx={{ display: "flex"}}>
+              <input type="text" className="input-style" placeholder={translate("listChemicalRegister.inputSAP")} />
+              <Tooltip title="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx">
+                <IconButton>
+                  <HelpIcon sx={{ backgroundColor: "#FFFFFF", borderRadius: 50, height: "50px", width: "50px"}} color="success" />
+                </IconButton>
+              </Tooltip>
+            </Box>
+            <Box sx={{ marginRight: "40px"}}>
+              <SimpleButtonComponent title={translate("listChemicalRegister.btnSearch")} color={"#91BE33"} handleClick={handleClick}/>
+            </Box>
           </Box>
         </Box>
 

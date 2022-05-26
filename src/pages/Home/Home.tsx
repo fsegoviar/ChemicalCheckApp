@@ -58,11 +58,12 @@ const Home = () => {
           </Grid>
           <Grid item xs={12} md={8} lg={6}>
             <CategoryComponent
-              urlImg={imgPeriodicVal}
-              title={translate("home.periodicValidation")}
-              to="/validacion_periodica"
+              urlImg={imgNewChemical}
+              title={translate("home.registerChemical")}
+              to="/registrar_insumo"
             />
           </Grid>
+
           <Grid item xs={12} md={8} lg={6}>
             <CategoryComponent
               urlImg={imgReport}
@@ -72,9 +73,9 @@ const Home = () => {
           </Grid>
           <Grid item xs={12} md={8} lg={6}>
             <CategoryComponent
-              urlImg={imgNewChemical}
-              title={translate("home.registerChemical")}
-              to="/registrar_insumo"
+              urlImg={imgPeriodicVal}
+              title={translate("home.periodicValidation")}
+              to="/validacion_periodica"
             />
           </Grid>
           {/*<Grid item xs={12} md={8} lg={6}>

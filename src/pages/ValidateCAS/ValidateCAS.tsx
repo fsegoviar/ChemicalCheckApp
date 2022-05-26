@@ -61,7 +61,6 @@ const ValidateCas = () => {
           </Box>
           <Box sx={{
             width: "600px",
-            height: "250px",
             display: display
           }}>
             <ListComponent />

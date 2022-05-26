@@ -28,7 +28,7 @@
     "section3": "Actualización por datos de insumo"
   },
   "anualAnalysis": {
-    "header": "Actualización anual de laboratorio",
+    "header": "Actualización análisis de laboratorio",
     "input": "Elige un insumo...Ejemplo Sal",
     "button1": "Incorporar datos al análisis",
     "button2": "Carga masiva"

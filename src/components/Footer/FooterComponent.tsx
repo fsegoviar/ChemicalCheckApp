@@ -9,7 +9,7 @@ const Footer = styled("div")(
     position:"relative",
     display: "flex",
     justifyContent: "center",
-    padding:"10px",
+    alignItems: "center",
     boxSizing: "border-box"
   })
 );
@@ -20,10 +20,11 @@ const FooterComponent = () => {
       <Box sx={{
         backgroundImage: `url(${logoCMPC})`,
         backgroundPosition: "center",
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        width: "130px",
-        height: "80px"
+        width: "100px",
+        height: "100px",
+        marginTop: "-15px"
       }}></Box>
     </Footer>
   );

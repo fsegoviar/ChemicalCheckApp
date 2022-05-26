@@ -1,7 +1,17 @@
 import React, {useState} from 'react';
 import NavBarComponent from "../../components/NavBar/NavBarComponent";
 import Banner from "../../components/Banner/Banner";
-import {Box, FormControl, Grid, MenuItem, Select, SelectChangeEvent, TextField, Typography} from "@mui/material";
+import {
+  Box,
+  FormControl,
+  FormControlLabel,
+  Grid,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  TextField,
+  Typography
+} from "@mui/material";
 import fondoNuevoInsumo from "./images/fondo_nuevo_insumo.jpg";
 import FooterComponent from "../../components/Footer/FooterComponent";
 import SimpleButtonComponent from "../../components/Buttons/SimpleButtonComponent";
@@ -9,6 +19,18 @@ import {useTranslation} from "react-i18next";
 import {useNavigate} from "react-router-dom";
 
 const NewChemical = () => {
+
+  const itemInsumo = [
+    "Insumo 1",
+    "Insumo 2",
+    "Insumo 3",
+    "Insumo 4",
+    "Insumo 5",
+    "Insumo 6",
+    "Insumo 7",
+    "Insumo 8",
+    "Insumo 9",
+  ];
 
   const itemProduct = [
     "Producto 1",
@@ -49,6 +71,7 @@ const NewChemical = () => {
   ]
 
   const [product, setProduct] = useState('');
+  const [insumo, setInsumo] = useState('');
   const [planta, setPlanta] = useState('');
   const [lProduccion, setLproduccion] = useState('');
   const [centro, setcentro] = useState('');
@@ -60,13 +83,16 @@ const NewChemical = () => {
   const [hiddenStep4, setHiddenStep4] = useState(true);
 
 
-
   const navigate = useNavigate();
   const [translate] = useTranslation("global");
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
     navigate("buscar_proveedor");
+  }
+
+  const handleChangeInsumo = (event: SelectChangeEvent<typeof insumo>) => {
+    setInsumo(event.target.value as string);
   }
 
   const handleChangeProduct = (event: SelectChangeEvent<typeof product>) => {
@@ -81,12 +107,12 @@ const NewChemical = () => {
 
   const handleChangeProduccion = (event: SelectChangeEvent<typeof lProduccion>) => {
     setLproduccion(event.target.value as string);
-      setHiddenStep3(false);
+    setHiddenStep3(false);
   }
 
   const handleChangeCentro = (event: SelectChangeEvent<typeof centro>) => {
     setcentro(event.target.value as string);
-      setHiddenStep3(false);
+    setHiddenStep3(false);
   }
 
   const handleChangeFibra = (event: SelectChangeEvent<typeof fibra>) => {
@@ -124,8 +150,47 @@ const NewChemical = () => {
             <Grid container sx={{
               width: "100%",
             }}>
-              <Grid item xs={6} sx={{padding: "20px 0", display: "flex", justifyContent: "center"}}>
-                <FormControl sx={{m: 1, width: 300, mt: 3}}>
+              <Grid item xs={6} sx={{display: "flex", justifyContent: "center"}}>
+                <FormControl sx={{m: 1, width: 300}}>
+                  <Box>
+                    <Typography variant={"h6"} style={{
+                      color: "#FFFFFF",
+                      fontWeight: "bold",
+                      textShadow: "3px 3px #939393"
+                    }}>Insumo</Typography>
+                    <Select
+                      value={insumo}
+                      onChange={handleChangeInsumo}
+                      sx={{
+                        backgroundColor: "#96BC60",
+                        width: "100%"
+                      }}
+                    >
+                      {itemInsumo.map((insumo: string) => (
+                        <MenuItem
+                          key={insumo}
+                          value={insumo}
+                        >{insumo}</MenuItem>
+                      ))}
+                    </Select>
+                  </Box>
+                </FormControl>
+              </Grid>
+              <Grid item xs={6} sx={{display: "flex", justifyContent: "center"}}>
+                <FormControl sx={{m: 1, width: 300}}>
+                  <Box >
+                    <Typography variant={"h6"}
+                                style={{color: "#FFFFFF", fontWeight: "bold", textShadow: "3px 3px #939393"}}>Número CAS
+                    </Typography>
+                    <TextField id="outlined-basic" type={"text"} variant="outlined" sx={{
+                      backgroundColor: "#96BC60",
+                      width: "100%"
+                    }}/>
+                  </Box>
+                </FormControl>
+              </Grid>
+              <Grid item xs={6} sx={{display: "flex", justifyContent: "center"}}>
+                <FormControl sx={{m: 1, width: 300}}>
                   <Box>
                     <Typography variant={"h6"} style={{
                       color: "#FFFFFF",
@@ -150,8 +215,8 @@ const NewChemical = () => {
                   </Box>
                 </FormControl>
               </Grid>
-              <Grid item xs={6} sx={{padding: "20px 0", display: "flex", justifyContent: "center"}}>
-                <FormControl sx={{m: 1, width: 300, mt: 3}}>
+              <Grid item xs={6} sx={{display: "flex", justifyContent: "center"}}>
+                <FormControl sx={{m: 1, width: 300}}>
                   <Box hidden={hiddenStep1}>
                     <Typography variant={"h6"} style={{
                       color: "#FFFFFF",
@@ -177,7 +242,7 @@ const NewChemical = () => {
                 </FormControl>
               </Grid>
               <Grid item xs={6} sx={{display: "flex", justifyContent: "center"}}>
-                <FormControl sx={{m: 1, width: 300, mt: 3}}>
+                <FormControl sx={{m: 1, width: 300}}>
                   <Box hidden={hiddenStep2}>
                     <Typography variant={"h6"}
                                 style={{color: "#FFFFFF", fontWeight: "bold", textShadow: "3px 3px #939393"}}>Linea de
@@ -201,7 +266,7 @@ const NewChemical = () => {
                 </FormControl>
               </Grid>
               <Grid item xs={6} sx={{display: "flex", justifyContent: "center"}}>
-                <FormControl sx={{m: 1, width: 300, mt: 3}}>
+                <FormControl sx={{m: 1, width: 300}}>
                   <Box hidden={hiddenStep2}>
                     <Typography variant={"h6"} style={{
                       color: "#FFFFFF",
@@ -226,8 +291,8 @@ const NewChemical = () => {
                   </Box>
                 </FormControl>
               </Grid>
-              <Grid item xs={6} sx={{padding: "20px 0", display: "flex", justifyContent: "center"}}>
-                <FormControl sx={{m: 1, width: 300, mt: 3}}>
+              <Grid item xs={6} sx={{display: "flex", justifyContent: "center"}}>
+                <FormControl sx={{m: 1, width: 300}}>
                   <Box hidden={hiddenStep3}>
                     <Typography variant={"h6"}
                                 style={{color: "#FFFFFF", fontWeight: "bold", textShadow: "3px 3px #939393"}}>Contacto
@@ -251,8 +316,8 @@ const NewChemical = () => {
                   </Box>
                 </FormControl>
               </Grid>
-              <Grid item xs={6} sx={{padding: "20px 0", display: "flex", justifyContent: "center"}}>
-                <FormControl sx={{m: 1, width: 300, mt: 3}}>
+              <Grid item xs={6} sx={{display: "flex", justifyContent: "center"}}>
+                <FormControl sx={{m: 1, width: 300}}>
                   <Box hidden={hiddenStep4}>
                     <Typography variant={"h6"}
                                 style={{color: "#FFFFFF", fontWeight: "bold", textShadow: "3px 3px #939393"}}>Dosificación
@@ -261,6 +326,8 @@ const NewChemical = () => {
                       backgroundColor: "#96BC60",
                       width: "100%"
                     }}/>
+                    <FormControlLabel control={<span></span>} label={"(*) Completar con punto y dos decimales"}
+                                      sx={{marginLeft: 1, color: "white", textShadow: "3px 3px #939393"}}/>
                   </Box>
                 </FormControl>
               </Grid>

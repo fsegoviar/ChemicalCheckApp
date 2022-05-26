@@ -1,10 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import NavBarComponent from "../../components/NavBar/NavBarComponent";
 import Banner from "../../components/Banner/Banner";
 import FooterComponent from "../../components/Footer/FooterComponent";
 import fondoLab from "./images/fondo_informes.jpg";
 import iconLupa from "../../images/lupa.png";
-import {Box, Button, FormControl, FormControlLabel, Radio, RadioGroup} from "@mui/material";
+import {
+  Box,
+  Button,
+  FormControl,
+  FormControlLabel,
+  Grid, MenuItem,
+  Radio,
+  RadioGroup, Select, SelectChangeEvent,
+  TextField,
+  Typography
+} from "@mui/material";
 import ButtonComponent from "../RegisterChemical/components/ButtonComponent";
 import {useTranslation} from "react-i18next";
 import {useNavigate} from "react-router-dom";
@@ -12,8 +22,10 @@ import {useNavigate} from "react-router-dom";
 const Reports = () => {
 
   // const [display, setDisplay] = useState("none");
-  const [translation] = useTranslation("global")
+  const [translation] = useTranslation("global");
+  const [planta, setPlanta] = useState('');
   const navigate = useNavigate();
+  const [product, setProduct] = useState('');
   /*const handleClick = () => {
     setDisplay("block");
   }*/
@@ -27,6 +39,22 @@ const Reports = () => {
     inform5: "Informe de insumo, dosificación del insumo y cumplimiento por regulación y por producto",
     inform6: "Informe de no cumplimiento de insumo // informe de insumos bloqueados",
   });
+
+  const itemProduct = [
+    "Producto 1",
+    "Producto 2",
+    "Producto 3",
+    "Producto 4",
+    "Producto 5",
+
+  ];
+
+  const itemPlanta = [
+    "Planta 1",
+    "Planta 2",
+    "Planta 3",
+    "Planta 4",
+  ];
 
   const {
     inform1,
@@ -42,6 +70,14 @@ const Reports = () => {
     navigate("/resultado_reportes");
   }
 
+  const handleChangeProduct = (event: SelectChangeEvent<typeof product>) => {
+    setProduct(event.target.value as string);
+  }
+
+  const handleChangePlanta = (event: SelectChangeEvent<typeof planta>) => {
+    setPlanta(event.target.value as string)
+  }
+
   return (
     <React.Fragment>
       <NavBarComponent displayArrow={"block"}/>
@@ -52,6 +88,7 @@ const Reports = () => {
         height: "75vh",
         position: "relative"
       }}>
+
         <Box
           sx={{
             width: "100%",
@@ -62,6 +99,56 @@ const Reports = () => {
             justifyContent: "center"
           }}
         >
+          <Grid container sx={{ justifyContent: "center"}}>
+            <Grid item xs={6} sx={{display: "flex", justifyContent: "end"}}>
+              <FormControl sx={{m: 1, width: 300}}>
+                <Box >
+                  <Typography variant={"h6"}
+                              style={{color: "#FFFFFF", fontWeight: "bold", textShadow: "3px 3px #939393"}}>Planta
+                  </Typography>
+                  <Select
+                    value={planta}
+                    onChange={handleChangePlanta}
+                    sx={{
+                      backgroundColor: "#96BC60",
+                      width: "100%"
+                    }}
+                  >
+                    {itemPlanta.map((planta) => (
+                      <MenuItem
+                        key={planta}
+                        value={planta}
+                      >{planta}</MenuItem>
+                    ))}
+                  </Select>
+                </Box>
+              </FormControl>
+            </Grid>
+            <Grid item xs={6} sx={{display: "flex", justifyContent: "start"}}>
+              <FormControl sx={{m: 1, width: 300}}>
+                <Box >
+                  <Typography variant={"h6"}
+                              style={{color: "#FFFFFF", fontWeight: "bold", textShadow: "3px 3px #939393"}}>Producto
+                  </Typography>
+                  <Select
+                    value={product}
+                    onChange={handleChangeProduct}
+                    sx={{
+                      backgroundColor: "#96BC60",
+                      width: "100%"
+                    }}
+                  >
+                    {itemProduct.map((product) => (
+                      <MenuItem
+                        key={product}
+                        value={product}
+                      >{product}</MenuItem>
+                    ))}
+                  </Select>
+                </Box>
+              </FormControl>
+            </Grid>
+          </Grid>
           <Box sx={{display: "flex", alignItems: "center", justifyContent: "center", width: "100%", maxWidth: "620px"}}>
             <input type="text" className="input-validate-CAS" placeholder={translation("reports.input")}/>
             <Button sx={{
