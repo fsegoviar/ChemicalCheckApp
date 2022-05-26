@@ -39,7 +39,7 @@
     "button1": "Incorporar datos regulaciones"
   },
   "updateRegulations": {
-    "header": "Actualización por insumos",
+    "header": "Actualización por datos de insumo",
     "input": "Elige un insumo...Ejemplo Sal",
     "button1": "Incorporar datos insumo"
   },

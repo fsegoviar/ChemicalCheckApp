@@ -20,18 +20,6 @@ import {useNavigate} from "react-router-dom";
 
 const NewChemical = () => {
 
-  const itemInsumo = [
-    "Insumo 1",
-    "Insumo 2",
-    "Insumo 3",
-    "Insumo 4",
-    "Insumo 5",
-    "Insumo 6",
-    "Insumo 7",
-    "Insumo 8",
-    "Insumo 9",
-  ];
-
   const itemProduct = [
     "Producto 1",
     "Producto 2",
@@ -71,7 +59,6 @@ const NewChemical = () => {
   ]
 
   const [product, setProduct] = useState('');
-  const [insumo, setInsumo] = useState('');
   const [planta, setPlanta] = useState('');
   const [lProduccion, setLproduccion] = useState('');
   const [centro, setcentro] = useState('');
@@ -91,18 +78,15 @@ const NewChemical = () => {
     navigate("buscar_proveedor");
   }
 
-  const handleChangeInsumo = (event: SelectChangeEvent<typeof insumo>) => {
-    setInsumo(event.target.value as string);
-  }
 
   const handleChangeProduct = (event: SelectChangeEvent<typeof product>) => {
     setProduct(event.target.value as string);
-    setHiddenStep1(false);
+    setHiddenStep2(false);
   }
 
   const handleChangePlanta = (event: SelectChangeEvent<typeof planta>) => {
     setPlanta(event.target.value as string)
-    setHiddenStep2(false);
+    setHiddenStep1(false);
   }
 
   const handleChangeProduccion = (event: SelectChangeEvent<typeof lProduccion>) => {
@@ -158,21 +142,10 @@ const NewChemical = () => {
                       fontWeight: "bold",
                       textShadow: "3px 3px #939393"
                     }}>Insumo</Typography>
-                    <Select
-                      value={insumo}
-                      onChange={handleChangeInsumo}
-                      sx={{
-                        backgroundColor: "#96BC60",
-                        width: "100%"
-                      }}
-                    >
-                      {itemInsumo.map((insumo: string) => (
-                        <MenuItem
-                          key={insumo}
-                          value={insumo}
-                        >{insumo}</MenuItem>
-                      ))}
-                    </Select>
+                    <TextField id="outlined-basic" type={"text"} variant="outlined" sx={{
+                      backgroundColor: "#96BC60",
+                      width: "100%"
+                    }}/>
                   </Box>
                 </FormControl>
               </Grid>
@@ -196,32 +169,6 @@ const NewChemical = () => {
                       color: "#FFFFFF",
                       fontWeight: "bold",
                       textShadow: "3px 3px #939393"
-                    }}>Producto</Typography>
-                    <Select
-                      value={product}
-                      onChange={handleChangeProduct}
-                      sx={{
-                        backgroundColor: "#96BC60",
-                        width: "100%"
-                      }}
-                    >
-                      {itemProduct.map((product) => (
-                        <MenuItem
-                          key={product}
-                          value={product}
-                        >{product}</MenuItem>
-                      ))}
-                    </Select>
-                  </Box>
-                </FormControl>
-              </Grid>
-              <Grid item xs={6} sx={{display: "flex", justifyContent: "center"}}>
-                <FormControl sx={{m: 1, width: 300}}>
-                  <Box hidden={hiddenStep1}>
-                    <Typography variant={"h6"} style={{
-                      color: "#FFFFFF",
-                      fontWeight: "bold",
-                      textShadow: "3px 3px #939393"
                     }}>Planta</Typography>
                     <Select
                       value={planta}
@@ -236,6 +183,32 @@ const NewChemical = () => {
                           key={planta}
                           value={planta}
                         >{planta}</MenuItem>
+                      ))}
+                    </Select>
+                  </Box>
+                </FormControl>
+              </Grid>
+              <Grid item xs={6} sx={{display: "flex", justifyContent: "center"}}>
+                <FormControl sx={{m: 1, width: 300}}>
+                  <Box hidden={hiddenStep1}>
+                    <Typography variant={"h6"} style={{
+                      color: "#FFFFFF",
+                      fontWeight: "bold",
+                      textShadow: "3px 3px #939393"
+                    }}>Producto</Typography>
+                    <Select
+                      value={product}
+                      onChange={handleChangeProduct}
+                      sx={{
+                        backgroundColor: "#96BC60",
+                        width: "100%"
+                      }}
+                    >
+                      {itemProduct.map((product) => (
+                        <MenuItem
+                          key={product}
+                          value={product}
+                        >{product}</MenuItem>
                       ))}
                     </Select>
                   </Box>

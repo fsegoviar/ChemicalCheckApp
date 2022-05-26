@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import NavBarComponent from "../../components/NavBar/NavBarComponent";
 import {Box, Button, FormControl, FormControlLabel, Radio, RadioGroup} from "@mui/material";
 import fondoLab from "../../images/fondo_lab.svg";
@@ -9,8 +9,20 @@ import ButtonComponent from "./components/ButtonComponent";
 
 const SearchSupplier = () => {
 
+  const [hidden, setHidden] = useState(true);
+
   const handleClick = () => {
 
+  }
+
+  const handlePressEnter = (e: any) => {
+    if(e.key === "Enter" && e.target.value !== ""){
+      setHidden(false);
+    }
+  }
+
+  const handleSearch = () => {
+    setHidden(false);
   }
 
   return (
@@ -36,7 +48,7 @@ const SearchSupplier = () => {
           }}
         >
           <Box sx={{display: "flex", alignItems: "center"}}>
-          <input type="text" className="input-validate-CAS" placeholder="Email del proveedor"/>
+          <input type="text" className="input-validate-CAS" onKeyDown={handlePressEnter} placeholder="Email del proveedor"/>
           <Button sx={{
             backgroundColor: "green",
             backgroundImage: `url(${iconLupa})`,
@@ -48,9 +60,9 @@ const SearchSupplier = () => {
             "&:hover": {
               backgroundColor: "#91BE33"
             }
-          }}></Button>
+          }} onClick={handleSearch}></Button>
         </Box>
-          <Box sx={{
+          <Box hidden={hidden} sx={{
             width: "350px",
             height: "250px",
             marginTop: "10px",

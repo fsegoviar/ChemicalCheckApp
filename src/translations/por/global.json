@@ -39,7 +39,7 @@
     "button1": "Incorporar dados regulatórios"
   },
   "updateRegulations": {
-    "header": "Atualizando por entradas",
+    "header": "Atualizar formulário de fornecedor",
     "input": "escolha uma entrada",
     "button1": "Incorporar dados de entrada"
   },

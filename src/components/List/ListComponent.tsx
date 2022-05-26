@@ -9,19 +9,19 @@ const ListComponent = () => {
 
   return (
     <Box sx={{
-      backgroundColor:"#91BE33",
+      backgroundColor:"#FFFFFF",
       width: "100%",
       height: "100px",
       overflowY: "scroll",
-      border: "2px solid white",
+      border: "2px solid #91BE33",
       boxSizing: "border-box",
-      borderRadius: 5,
+      borderRadius: 2,
       display: "flex",
       position: "relative",
       justifyContent: "center",
       alignItems: "center"
     }}>
-      <Typography variant={"h6"} color={"white"} style={{fontWeight: "bold"}}>{translation("reports.notFound")}</Typography>
+      <Typography variant={"h6"} color={"#91BE33"} style={{fontWeight: "bold"}}>{translation("reports.notFound")}</Typography>
     </Box>
   );
 };

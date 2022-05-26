@@ -23,6 +23,7 @@ const Reports = () => {
   // const [display, setDisplay] = useState("none");
   const [translation] = useTranslation("global");
   const [planta, setPlanta] = useState('');
+  const [hidden, setHidden] = useState(true);
   const navigate = useNavigate();
   const [product, setProduct] = useState('');
   /*const handleClick = () => {
@@ -75,6 +76,16 @@ const Reports = () => {
 
   const handleChangePlanta = (event: SelectChangeEvent<typeof planta>) => {
     setPlanta(event.target.value as string)
+  }
+
+  const handlePressEnter = (e: any) => {
+    if(e.key === "Enter" && e.target.value !== ""){
+      setHidden(false);
+    }
+  }
+
+  const handleSearch = (e: any) => {
+    setHidden(false);
   }
 
   return (
@@ -149,7 +160,7 @@ const Reports = () => {
             </Grid>
           </Grid>
           <Box sx={{display: "flex", alignItems: "center", justifyContent: "center", width: "100%", maxWidth: "620px"}}>
-            <input type="text" className="input-validate-CAS" placeholder={translation("reports.input")}/>
+            <input type="text" onKeyDown={handlePressEnter} className="input-validate-CAS" placeholder={translation("reports.input")}/>
             <Button sx={{
               backgroundColor: "green",
               backgroundImage: `url(${iconLupa})`,
@@ -161,9 +172,9 @@ const Reports = () => {
               "&:hover": {
                 backgroundColor: "#91BE33"
               }
-            }}></Button>
+            }} onClick={handleSearch}></Button>
           </Box>
-          <Box sx={{
+          <Box  hidden={hidden} sx={{
             width: "600px",
             height: "250px",
           }}>
@@ -175,7 +186,7 @@ const Reports = () => {
               overflowY: "scroll",
               border: "2px solid #91BE33",
               boxSizing: "border-box",
-              borderRadius: 5,
+              borderRadius: 2,
               display: "flex",
               position: "relative",
               justifyContent: "center",
