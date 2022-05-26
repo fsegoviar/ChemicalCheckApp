@@ -12,7 +12,6 @@ import {
   Grid, MenuItem,
   Radio,
   RadioGroup, Select, SelectChangeEvent,
-  TextField,
   Typography
 } from "@mui/material";
 import ButtonComponent from "../RegisterChemical/components/ButtonComponent";
