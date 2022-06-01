@@ -21,7 +21,7 @@ const PeriodicValidation = () => {
       flexDirection: "column",
       position: "relative"
     }}>
-      <NavBarComponent displayArrow={"block"}/>
+      <NavBarComponent displayArrow={"block"} returnTo={"/"}/>
       <Banner title={translate("periodicValidation.header")}/>
       <Box
         sx={{

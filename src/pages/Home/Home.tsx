@@ -26,7 +26,7 @@ const Home = () => {
   const [translate] = useTranslation("global");
   return (
     <BackgroungHome>
-      <NavBarComponent/>
+      <NavBarComponent />
 
       <Box
         sx={{
@@ -44,18 +44,14 @@ const Home = () => {
         >
           <Box sx={{
             width: "100%",
-            height: "50vh",
+            height: "30vh",
             backgroundImage: `url(${imgBanne})`,
-            backgroundSize: "contain",
+            backgroundSize: "cover",
             backgroundPosition: "center",
-            backgroundRepeat: "no-repeat"
+            backgroundRepeat: "no-repeat",
           }}>
 
           </Box>
-
-          {/* <Box sx={{ width: "50%", height: "21vh" }}>
-            <ImageComponent url={imgReport} colorFooter={"#8fbc22"} />
-          </Box> */}
         </Box>
 
         <Grid

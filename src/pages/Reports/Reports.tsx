@@ -90,7 +90,7 @@ const Reports = () => {
 
   return (
     <React.Fragment>
-      <NavBarComponent displayArrow={"block"}/>
+      <NavBarComponent displayArrow={"block"} returnTo={"/"}/>
       <Banner title={translation("reports.header")}/>
       <Box className={"config-img"} sx={{
         backgroundImage: `url(${fondoLab})`,

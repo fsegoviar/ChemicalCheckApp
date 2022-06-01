@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Paper } from "@mui/material";
+import {Paper, Typography} from "@mui/material";
 
 type PropsCategory = {
   title: string;
@@ -35,9 +35,7 @@ const CategoryComponent = (props: PropsCategory) => {
       }}
       onClick={handleClick}
     >
-      <h1 style={{ zIndex: "1", textAlign: "center", color: "white" }}>
-        {props.title}
-      </h1>
+      <Typography variant={"h5"} color={"white"} style={{zIndex: "1", textAlign: "center", fontWeight: "bold"}}>{props.title}</Typography>
     </Paper>
   );
 };

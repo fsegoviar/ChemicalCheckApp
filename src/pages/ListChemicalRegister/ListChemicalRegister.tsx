@@ -21,7 +21,7 @@ const ListChemicalRegister = () => {
 
   return (
     <React.Fragment>
-      <NavBarComponent displayArrow={"block"}/>
+      <NavBarComponent displayArrow={"block"} returnTo={"/"}/>
       <Banner title={translate("listChemicalRegister.header")}/>
       <Box className={"config-img"} sx={{
         backgroundImage: `url(${fondoLab})`,
