@@ -15,7 +15,7 @@ const BackgroungHome = styled("div")(
     backgroundRepeat: "no-repeat",
     width: "100%",
     height: "100%",
-    minHeight: "100vh",
+    maxHeight: "100vh",
     display: "flex",
     flexDirection: "column",
     position: "relative",
@@ -30,8 +30,8 @@ const Home = () => {
 
       <Box
         sx={{
-          flex: "1 0 auto",
           width: "100%",
+          height: "90vh"
         }}
       >
         <Box
@@ -39,7 +39,7 @@ const Home = () => {
             width: "100%",
             display: "flex",
             boxSizing: "border-box",
-            p: "20px 0",
+            paddingTop: "10px"
           }}
         >
           <Box sx={{

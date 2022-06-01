@@ -50,7 +50,7 @@ const NavBarComponent = (props: PropsNavbar) => {
     <Grid container sx={{
       position: "relative",
       width: "100%",
-      height: "80px",
+      height: "10vh",
       backgroundColor: "#40AA3E",
       display: "flex",
       alignItems: "center",
