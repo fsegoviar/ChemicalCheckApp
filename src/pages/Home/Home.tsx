@@ -1,16 +1,11 @@
 import React from "react";
 import NavBarComponent from "../../components/NavBar/NavBarComponent";
-import { Box, experimental_sx as sx, Grid, styled } from "@mui/material";
+import {Box, experimental_sx as sx, Grid, styled} from "@mui/material";
 import backgroundHome from "./images/backgroundHome.jpg";
 import CategoryComponent from "./components/CategoryComponent";
 import FooterComponent from "../../components/Footer/FooterComponent";
-import { useTranslation } from "react-i18next";
-import imgRegistrarCh from "../RegisterChemical/images/fondo_section_register.jpg";
-import imgValidationPeriodic from "../PeriodicValidation/images/fondo_validacion_periodica.jpg";
-import imgValidateCAS from "../ValidateCAS/images/fondo_validar_cas.jpg";
-import imgListChemical from "../ListChemicalRegister/images/fondo_listar_insumo.jpg";
-
-import {ImageComponent} from "./components/ImageComponent";
+import {useTranslation} from "react-i18next";
+import imgBanne from "./images/Banner1.png";
 
 const BackgroungHome = styled("div")(
   sx({
@@ -31,7 +26,7 @@ const Home = () => {
   const [translate] = useTranslation("global");
   return (
     <BackgroungHome>
-      <NavBarComponent />
+      <NavBarComponent/>
 
       <Box
         sx={{
@@ -47,21 +42,17 @@ const Home = () => {
             p: "20px 0",
           }}
         >
-          <Box sx={{ width: "25%", height: "21vh" }}>
-            <ImageComponent url={imgRegistrarCh} colorFooter={"#8fbc22"} />
+          <Box sx={{
+            width: "100%",
+            height: "50vh",
+            backgroundImage: `url(${imgBanne})`,
+            backgroundSize: "contain",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat"
+          }}>
+
           </Box>
-          <Box sx={{ width: "25%", height: "21vh" }}>
-            <ImageComponent
-              url={imgValidationPeriodic}
-              colorFooter={"#73da62ff"}
-            />
-          </Box>
-          <Box sx={{ width: "25%", height: "21vh" }}>
-            <ImageComponent url={imgValidateCAS} colorFooter={"#44a934ff"} />
-          </Box>
-          <Box sx={{ width: "25%", height: "21vh" }}>
-            <ImageComponent url={imgListChemical} colorFooter={"#358f27ff"} />
-          </Box>
+
           {/* <Box sx={{ width: "50%", height: "21vh" }}>
             <ImageComponent url={imgReport} colorFooter={"#8fbc22"} />
           </Box> */}
@@ -76,7 +67,6 @@ const Home = () => {
             boxSizing: "border-box",
             width: "80%",
             margin: "0 auto",
-            paddingTop: "5%",
           }}
         >
           <Grid item xs={12} md={8} lg={4}>
@@ -125,7 +115,7 @@ const Home = () => {
             </Grid>*/}
         </Grid>
       </Box>
-      <FooterComponent />
+      <FooterComponent/>
     </BackgroungHome>
   );
 };
