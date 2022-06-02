@@ -43,7 +43,7 @@ const SearchSupplier = () => {
 
   return (
     <BackgroungHome>
-      <NavBarComponent displayArrow={"block"} returnTo={"/nuevo_registro"} displayHome={"block"}/>
+      <NavBarComponent displayArrow={"block"} returnTo={"/registrar_insumo/nuevo_registro"} displayHome={"block"}/>
       <Box
         sx={{
           position: "relative",
