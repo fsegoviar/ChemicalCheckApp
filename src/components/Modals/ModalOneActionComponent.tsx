@@ -23,8 +23,8 @@ const ModalOneActionComponent = (props: PropsModal) => {
       <Box className={"config-img"} sx={{
         backgroundImage: `url(${props.img})`,
         backgroundSize: "contain",
-        width: "50%",
-        height: "50%"
+        width: "200px",
+        height: "200px"
       }}></Box>
       <Typography variant={"h4"} style={{fontWeight: "bold", color: "#878689"}}>{props.title}</Typography>
       <Typography variant={"h5"}>{props.subtitle}</Typography>

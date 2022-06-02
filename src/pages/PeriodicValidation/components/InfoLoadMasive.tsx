@@ -1,11 +1,29 @@
 import React from 'react';
 import NavBarComponent from "../../../components/NavBar/NavBarComponent";
-import {Box, Button, Grid, Typography} from "@mui/material";
-import fondoLab from "../images/fondo_validacion_periodica.jpg";
+import {Box,styled, Typography} from "@mui/material";
+import fondoLab from "../../../images/fondo_lab.svg";
+import aprobado from "../../../images/aprobado.png";
 import FooterComponent from "../../../components/Footer/FooterComponent";
 import {useNavigate} from "react-router-dom";
 import Banner from "../../../components/Banner/Banner";
 import {useTranslation} from "react-i18next";
+import {experimental_sx as sx} from "@mui/system";
+import SimpleButtonComponent from "../../../components/Buttons/SimpleButtonComponent";
+
+const BackgroungHome = styled("div")(
+  sx({
+    backgroundImage: `url(${fondoLab})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    width: "100%",
+    height: "100%",
+    maxHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    position: "relative",
+  })
+);
 
 const InfoLoadMasive = () => {
 
@@ -17,7 +35,45 @@ const InfoLoadMasive = () => {
   }
 
   return (
-    <Box className={"config-img"} sx={{
+    <BackgroungHome>
+      <NavBarComponent displayArrow={"block"} returnTo={"/carga_masiva"} displayHome={"block"}/>
+      <Box
+        sx={{
+          position: "relative",
+          width: "100%",
+          height: "86vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        <Banner title={translate("loadMasive.header")}/>
+        <Box className={"config-img"} sx={{
+          backgroundImage: `url(${aprobado})`,
+          backgroundSize: "contain",
+          width: "200px",
+          height: "200px",
+          marginTop: "10vh"
+        }}></Box>
+        <Typography variant={"h3"} sx={{
+          color: "#6F6E72",
+          fontWeight: "bold",
+          width: "50%",
+          textAlign: "center",
+        }}>La carga de datos se ha realizado con éxito.</Typography>
+        <Box>
+          <SimpleButtonComponent title={"Descargue el informe de carga masiva aquí"} color={"#25834B"} handleClick={handleClick}/>
+        </Box>
+      </Box>
+      <FooterComponent/>
+    </BackgroungHome>
+  );
+};
+
+export default InfoLoadMasive;
+
+/*<Box className={"config-img"} sx={{
       backgroundImage: `url(${fondoLab})`,
       width: "100%",
       height: "100%",
@@ -80,8 +136,4 @@ const InfoLoadMasive = () => {
         </Grid>
       </Grid>
       <FooterComponent/>
-    </Box>
-  );
-};
-
-export default InfoLoadMasive;
+    </Box>*/

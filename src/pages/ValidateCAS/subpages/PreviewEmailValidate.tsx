@@ -25,22 +25,32 @@ const PreviewEmailValidate = () => {
       flexDirection: "column",
       boxSizing: "border-box"
     }}>
-      <NavBarComponent displayArrow={"block"}/>
+      <NavBarComponent displayArrow={"block"} returnTo={"/validar_cas"} displayHome={"block"}/>
       <Grid container justifyContent={"center"} sx={{ flex: "1 0 auto"}}>
-        <Grid item xs={12} sx={{
+        <Grid item xs={6} sx={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           height: "auto"
         }}>
           <Box sx={{
-            width: "40%",
+            width: "90%",
             height: "auto",
             border: "2px solid #90BC1F",
             borderRadius: "10px",
             boxSizing: "border-box",
-            padding: "50px",
+            padding: "20px",
           }}>
+            <Typography variant={"h6"} style={{
+              color: "#90BC1F",
+              fontWeight: "bold"
+            }}>Planta: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>Laja</p>
+            </Typography>
+            <Typography variant={"h6"} style={{
+              color: "#90BC1F",
+              fontWeight: "bold"
+            }}>Productos que utilizan #CAS: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>xxxxx</p>
+            </Typography>
             <Typography variant={"h6"} style={{
               color: "#90BC1F",
               fontWeight: "bold"
@@ -49,22 +59,117 @@ const PreviewEmailValidate = () => {
             <Typography variant={"h6"} style={{
               color: "#90BC1F",
               fontWeight: "bold"
-            }}>Regulaciones asociadas al #CAS: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>xxxxx</p>
+            }}>Regulaciones asociadas #CAS: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>xxxxx</p>
             </Typography>
+          </Box>
+
+        </Grid>
+        <Grid item xs={6} sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "auto"
+        }}>
+          <Box sx={{
+            width: "90%",
+            height: "auto",
+            border: "2px solid #90BC1F",
+            borderRadius: "10px",
+            boxSizing: "border-box",
+            padding: "20px",
+          }}>
             <Typography variant={"h6"} style={{
               color: "#90BC1F",
               fontWeight: "bold"
-            }}>Mercados asociados al #CAS: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>xxxxx</p>
-            </Typography>
-            <Typography variant={"h6"} style={{
-              color: "#90BC1F",
-              fontWeight: "bold"
-            }}>Plantas que utilizan #CAS: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>xxxxx</p>
+            }}>Planta: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>Pacifico</p>
             </Typography>
             <Typography variant={"h6"} style={{
               color: "#90BC1F",
               fontWeight: "bold"
             }}>Productos que utilizan #CAS: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>xxxxx</p>
+            </Typography>
+            <Typography variant={"h6"} style={{
+              color: "#90BC1F",
+              fontWeight: "bold"
+            }}>Insumos asociados al #CAS: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>xxxxx</p>
+            </Typography>
+            <Typography variant={"h6"} style={{
+              color: "#90BC1F",
+              fontWeight: "bold"
+            }}>Regulaciones asociadas #CAS: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>xxxxx</p>
+            </Typography>
+          </Box>
+
+        </Grid>
+        <Grid item xs={6} sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "auto"
+        }}>
+          <Box sx={{
+            width: "90%",
+            height: "auto",
+            border: "2px solid #90BC1F",
+            borderRadius: "10px",
+            boxSizing: "border-box",
+            padding: "20px",
+          }}>
+            <Typography variant={"h6"} style={{
+              color: "#90BC1F",
+              fontWeight: "bold"
+            }}>Planta: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>Santa Fe</p>
+            </Typography>
+            <Typography variant={"h6"} style={{
+              color: "#90BC1F",
+              fontWeight: "bold"
+            }}>Productos que utilizan #CAS: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>xxxxx</p>
+            </Typography>
+            <Typography variant={"h6"} style={{
+              color: "#90BC1F",
+              fontWeight: "bold"
+            }}>Insumos asociados al #CAS: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>xxxxx</p>
+            </Typography>
+            <Typography variant={"h6"} style={{
+              color: "#90BC1F",
+              fontWeight: "bold"
+            }}>Regulaciones asociadas #CAS: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>xxxxx</p>
+            </Typography>
+          </Box>
+        </Grid>
+        <Grid item xs={6} sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "auto"
+        }}>
+          <Box sx={{
+            width: "90%",
+            height: "auto",
+            border: "2px solid #90BC1F",
+            borderRadius: "10px",
+            boxSizing: "border-box",
+            padding: "20px",
+          }}>
+            <Typography variant={"h6"} style={{
+              color: "#90BC1F",
+              fontWeight: "bold"
+            }}>Planta: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>Guaiba</p>
+            </Typography>
+            <Typography variant={"h6"} style={{
+              color: "#90BC1F",
+              fontWeight: "bold"
+            }}>Productos que utilizan #CAS: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>xxxxx</p>
+            </Typography>
+            <Typography variant={"h6"} style={{
+              color: "#90BC1F",
+              fontWeight: "bold"
+            }}>Insumos asociados al #CAS: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>xxxxx</p>
+            </Typography>
+            <Typography variant={"h6"} style={{
+              color: "#90BC1F",
+              fontWeight: "bold"
+            }}>Regulaciones asociadas #CAS: <p style={{ display: "inline", color: "black", fontWeight: "normal"}}>xxxxx</p>
             </Typography>
           </Box>
 

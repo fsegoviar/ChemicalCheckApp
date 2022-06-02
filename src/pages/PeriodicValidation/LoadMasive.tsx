@@ -5,7 +5,7 @@ import {
   Autocomplete,
   Box,
   Button,
-  Grid,
+  Grid, styled,
 } from "@mui/material";
 import Banner from "../../components/Banner/Banner";
 import {useTranslation} from "react-i18next";
@@ -14,6 +14,7 @@ import FooterComponent from "../../components/Footer/FooterComponent";
 import ListFilesComponent from "./components/ListFilesComponent";
 import ButtonComponent from "../RegisterChemical/components/ButtonComponent";
 import {useNavigate} from "react-router-dom";
+import {experimental_sx as sx} from "@mui/system";
 
 const filesLoad = [
   "Tabla base",
@@ -111,6 +112,22 @@ const dataTable = [
   },
 ];
 
+const BackgroungHome = styled("div")(
+  sx({
+    backgroundImage: `url(${fondoLab})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    width: "100%",
+    height: "100%",
+    maxHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    position: "relative",
+
+  })
+);
+
 const LoadMasive = () => {
   const [files, setFiles] = useState<File[]>([]);
   const [hiddenLoad, setHiddenLoad] = useState(true);
@@ -167,7 +184,178 @@ const LoadMasive = () => {
   };
 
   return (
-    <Box
+    <BackgroungHome>
+      <NavBarComponent displayArrow={"block"} returnTo={"/validacion_periodica"} displayHome={"block"}/>
+      <Box
+        sx={{
+          position: "relative",
+          width: "100%",
+          height: "86vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Banner title={translate("loadMasive.header")}/>
+        <Grid
+          container
+          justifyContent={"center"}
+          sx={{marginTop: "10vh"}}
+        >
+          <Grid item xs={12}>
+            <form
+              style={{
+                width: "40%",
+                margin: "0 auto",
+                position: "relative",
+              }}
+            >
+              <Grid container>
+                <Grid item xs={6} sx={{padding: "10px", paddingTop: "0", paddingBottom: "0"}}>
+                  <label className="label-form" htmlFor="numberLoad">
+                    Número de carga
+                  </label>
+                  <input
+                    defaultValue={numberLoadMasive}
+                    disabled={!hiddenLoad}
+                    className="input-form"
+                    type="text"
+                    name="numberLoad"
+                    id="numberLoadMasive"
+                  />
+                </Grid>
+                <Grid item xs={6} sx={{padding: "15px", paddingTop: "5px", paddingBottom: "0"}}>
+                  <label className="label-form" htmlFor="numberLoad">
+                    Tabla de Carga:
+                    <Autocomplete
+                      disabled={!hiddenLoad}
+                      value={value}
+                      inputValue={inputValue}
+                      onChange={handleChangeLoadFile}
+                      onInputChange={handleInputChange}
+                      id="controllable-states-demo"
+                      options={filesLoad}
+                      renderInput={(params) => (
+                        <div ref={params.InputProps.ref}>
+                          <input
+                            type="text"
+                            {...params.inputProps}
+                            id="search-file"
+                            className={"input-form"}
+                          />
+                        </div>
+                      )}
+                    />
+                  </label>
+                </Grid>
+                <Grid item hidden={hiddenLoad} xs={12} sx={{padding: "10px", paddingTop: "0"}}>
+                  <label className="label-form" htmlFor="numberLoad">
+                    Descargue plantilla aquí
+                  </label>
+                  <Box className="input-form-lock" style={{position: "relative", cursor: "pointer", display: "flex"}}>
+                    <a href={`${urlTable}`} style={{
+                      textDecoration: "none",
+                      color: "white",
+                      position: "relative",
+                      display: "flex",
+                      width: "100%",
+                      marginTop: "6px",
+                      marginLeft: "5px",
+                      overflow: "hidden"
+                    }}
+                       target="_blank" rel="noreferrer"> {urlTable}</a>
+                  </Box>
+                </Grid>
+                <Grid
+                  item
+                  hidden={hiddenLoad}
+                  xs={12}
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Box hidden={hiddenLoad}>
+                    <Button
+                      sx={{
+                        maxWidth: "500px",
+                        fontSize: "1.1rem",
+                        fontWeight: "bold",
+                        backgroundColor: "#20844E",
+                        borderRadius: 50,
+                        border: "3px solid white",
+                        padding: "5px 10px",
+                        margin: "20px",
+                        color: "white",
+                        "&:hover":{
+                          backgroundColor: "#20844E"
+                        }
+                      }}
+                      component="label"
+                    >
+                      Elegir archivos
+                      <input
+                        type="file"
+                        hidden
+                        onChange={handleMultipleFiles}
+                        name="files"
+                        id="files"
+                      />
+                    </Button>
+                  </Box>
+                </Grid>
+                <Grid item hidden={hiddenLoad} xs={12}>
+                  {files.length > 0 && (
+                    <ListFilesComponent
+                      files={files}
+                      handleDeleteFile={handleDeleteFile}
+                    />
+                  )}
+                  <Alert severity="info" style={{
+                    marginTop: "10px",
+                    borderRadius: "10px",
+                    padding: "0 10px",
+                    backgroundColor: "#FFFFFF",
+                    border: "3px solid #666666",
+                    color:"#25834B",
+                    fontWeight: "bold",
+                  }}>
+                    Recuerda que todos los datos deben estar ubicados en la
+                    primera hoja del Libro Excel
+                  </Alert>
+                </Grid>
+                <Grid
+                  item
+                  hidden={hiddenLoad}
+                  xs={12}
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    position: "relative",
+                  }}
+                >
+                  <Box hidden={hiddenLoad}>
+                    <ButtonComponent
+                      title={"Iniciar Carga"}
+                      color={"#20844E"}
+                      handleClick={handleClick}
+                    />
+                  </Box>
+                </Grid>
+              </Grid>
+            </form>
+          </Grid>
+        </Grid>
+      </Box>
+      <FooterComponent/>
+    </BackgroungHome>
+  );
+};
+
+export default LoadMasive;
+
+/*<Box
       className={"config-img"}
       sx={{
         backgroundImage: `url(${fondoLab})`,
@@ -311,8 +499,4 @@ const LoadMasive = () => {
         </Grid>
       </Grid>
       <FooterComponent/>
-    </Box>
-  );
-};
-
-export default LoadMasive;
+    </Box>*/

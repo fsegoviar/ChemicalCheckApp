@@ -11,10 +11,10 @@ const SimpleButtonComponent = (props: PropsButton) => {
   return (
     <Button
       sx={{
-        fontSize: "1.5rem",
+        fontSize: "1.3rem",
         fontWeight: "bold",
         backgroundColor: props.color,
-        borderRadius: 50,
+        borderRadius: "50PX",
         boxSizing: "border-box",
         padding: "10px 30px",
         margin: "20px",

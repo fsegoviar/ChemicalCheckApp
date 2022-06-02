@@ -73,21 +73,23 @@ html {
 
 .input-style {
     margin: 10px;
-    width: 20vw;
+    width: 25vw;
+    max-width: 350px;
     border: 3px solid #91BE33;
     box-sizing: border-box;
     padding: 10px;
     border-radius: 50px;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .input-validate-CAS {
     margin: 10px;
     width: 30vw;
+    max-width: 400px;
     border: 3px solid #91BE33;
     box-sizing: border-box;
     padding: 10px;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     border-radius: 10px;
 }
 
@@ -125,8 +127,8 @@ html {
 
 .input-form-lock {
     background-color: #7a7a7a;
+    border: 3px solid #FFFFFF;
     outline: none;
-    border: none;
     border-radius: 5px;
     color: #FFFFFF;
     width: 100%;

@@ -4,7 +4,7 @@ import {Button} from "@mui/material";
 const ButtonComponent = ({title, handleClick, color}: any) => {
   return (
     <Button onClick={handleClick} sx={{
-      maxWidth: "500px",
+      maxWidth: "300px",
       fontSize: "1.3rem",
       fontWeight: "bold",
       backgroundColor: color,

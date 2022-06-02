@@ -12,14 +12,16 @@ const CardSectionComponent = ({title, url}: any) => {
 
   return (
     <Paper className={"config-img"} sx={{
-      backgroundColor: "#1F804D",
+      background:
+        "linear-gradient(0deg, rgba(32, 62, 19, 1) 0%, rgba(37, 131, 75, 1) 100%)",
       display: "flex",
       flexDirection: 'column',
       justifyContent: "center",
       alignItems: "center",
       margin: "20px",
       width: "100%",
-      height: "40vh",
+      height: "30vh",
+      maxHeight: "200px",
       position: "relative",
       cursor: "pointer",
       transition: "all .4s",

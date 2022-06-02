@@ -23,8 +23,8 @@ const ModalCompleteActions = ({title}: any) => {
       <Box className={"config-img"} sx={{
         backgroundImage: `url(${imgAprobado})`,
         backgroundSize: "contain",
-        width: "50%",
-        height: "50%"
+        width: "200px",
+        height: "200px"
       }}></Box>
       <Typography variant={"h3"} sx={{
         color: "#6F6E72",
@@ -37,7 +37,7 @@ const ModalCompleteActions = ({title}: any) => {
       }}>
         <Button sx={{
           maxWidth: "500px",
-          fontSize: "1.1rem",
+          fontSize: "1rem",
           fontWeight: "bold",
           backgroundColor: "#90BC1F",
           borderRadius: 50,
@@ -51,10 +51,10 @@ const ModalCompleteActions = ({title}: any) => {
         }}>Enviar al correo</Button>
         <Button sx={{
           maxWidth: "500px",
-          fontSize: "1.3rem",
+          fontSize: "1rem",
           fontWeight: "bold",
           backgroundColor: "#90BC1F",
-          borderRadius: 50,
+          borderRadius: "50px",
           border: "3px solid white",
           padding: "5px 30px",
           margin: "20px",
@@ -65,10 +65,10 @@ const ModalCompleteActions = ({title}: any) => {
         }}>Descargar</Button>
         <Button sx={{
           maxWidth: "500px",
-          fontSize: "1.3rem",
+          fontSize: "1rem",
           fontWeight: "bold",
           backgroundColor: "#90BC1F",
-          borderRadius: 50,
+          borderRadius: "50px",
           border: "3px solid white",
           padding: "5px 30px",
           margin: "20px",
@@ -85,10 +85,10 @@ const ModalCompleteActions = ({title}: any) => {
       }}>
         <Button sx={{
           maxWidth: "500px",
-          fontSize: "1.3rem",
+          fontSize: "1rem",
           fontWeight: "bold",
           backgroundColor: "#25814B",
-          borderRadius: 50,
+          borderRadius: "50px",
           border: "3px solid white",
           padding: "5px 30px",
           margin: "20px",

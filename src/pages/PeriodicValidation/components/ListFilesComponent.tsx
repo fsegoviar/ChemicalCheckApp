@@ -1,6 +1,5 @@
 import React from 'react';
-import {Box, IconButton, List, ListItem, ListItemText} from "@mui/material";
-import DeleteIcon from '@mui/icons-material/Delete';
+import {Box, Typography} from "@mui/material";
 
 const ListFilesComponent = ({files, handleDeleteFile}: any) => {
   const myFiles: any[] = [];
@@ -13,17 +12,15 @@ const ListFilesComponent = ({files, handleDeleteFile}: any) => {
     <Box sx={{
       backgroundColor: "#8DB763",
       border: "1px solid #FFFFFF",
-      width: "100%",
       marginTop: "10px",
       borderRadius: "5px",
       height: "auto",
       boxSizing: "border-box",
-      padding: "10px",
       maxHeight: "300px",
-      overflowY: "scroll",
+      padding: "0 10px",
     }}>
       {myFiles.map((file:File) =>
-        <List key={file.name}>
+        /*<List key={file.name}>
           <ListItem  secondaryAction={
             <IconButton edge="end" aria-label="delete" onClick={() => handleDeleteFile(file.name)}>
               <DeleteIcon style={{ color: 'white' }} />
@@ -35,7 +32,11 @@ const ListFilesComponent = ({files, handleDeleteFile}: any) => {
               primary={file.name}
             />
           </ListItem>
-        </List>
+        </List>*/
+        <Typography variant={"h6"} color={"white"} style={{
+          fontWeight: "bold",
+          textAlign: "center",
+        }}>{file.name}</Typography>
       )}
     </Box>
   );

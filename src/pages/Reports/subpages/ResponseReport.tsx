@@ -17,7 +17,7 @@ const ResponseReport = () => {
       flexDirection: "column",
       boxSizing: "border-box"
     }}>
-      <NavBarComponent displayArrow={"block"}/>
+      <NavBarComponent displayArrow={"block"} returnTo={"/reportes"} displayHome={"block"}/>
       <Grid container justifyContent={"center"} sx={{ flex: "1 0 auto"}}>
         <Grid item xs={12} sx={{
           display: "flex",

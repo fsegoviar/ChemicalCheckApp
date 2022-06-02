@@ -5,6 +5,7 @@ import logoCMPC from "../../images/Logocmpc_blanco.svg";
 const Footer = styled("div")(
   sx({
     width: "100%",
+    height: "12vh",
     backgroundColor: "#298854",
     position:"relative",
     display: "flex",
@@ -23,8 +24,7 @@ const FooterComponent = () => {
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
         width: "100px",
-        height: "100px",
-        marginTop: "-15px"
+        height: "100%",
       }}></Box>
     </Footer>
   );

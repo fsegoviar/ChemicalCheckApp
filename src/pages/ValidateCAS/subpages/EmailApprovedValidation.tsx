@@ -30,7 +30,7 @@ const EmailApprovedValidation = () => {
       flexDirection: "column",
       boxSizing: "border-box"
     }}>
-      <NavBarComponent displayArrow={"block"}/>
+      <NavBarComponent displayArrow={"block"} returnTo={"/validar_cas"}/>
       <Grid container justifyContent={"center"} sx={{ flex: "1 0 auto"}}>
         <Grid item xs={12} sx={{
           display: "flex",

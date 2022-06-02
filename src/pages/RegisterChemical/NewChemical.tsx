@@ -8,7 +8,7 @@ import {
   Grid,
   MenuItem,
   Select,
-  SelectChangeEvent,
+  SelectChangeEvent, styled,
   TextField,
   Typography
 } from "@mui/material";
@@ -17,6 +17,21 @@ import FooterComponent from "../../components/Footer/FooterComponent";
 import SimpleButtonComponent from "../../components/Buttons/SimpleButtonComponent";
 import {useTranslation} from "react-i18next";
 import {useNavigate} from "react-router-dom";
+import {experimental_sx as sx} from "@mui/system";
+
+const BackgroungHome = styled("div")(
+  sx({
+    backgroundImage: `url(${fondoNuevoInsumo})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    width: "100%",
+    height: "140vh",
+    display: "flex",
+    flexDirection: "column",
+    position: "relative",
+  })
+);
 
 const NewChemical = () => {
 
@@ -105,7 +120,236 @@ const NewChemical = () => {
   }
 
   return (
-    <React.Fragment>
+    <BackgroungHome>
+      <NavBarComponent displayArrow={"block"} returnTo={"/"}/>
+      <Box
+        sx={{
+          position: "relative",
+          width: "100%",
+          height: "86vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        <Banner title={translate("newChemical.header")}/>
+
+        <form onSubmit={handleSubmit} style={{
+          width: "100%",
+          height: "100vh",
+          marginTop: "15vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}>
+          <Box sx={{
+            width: "600px",
+            display: "flex",
+            justifyContent: "center",
+            borderRadius: "20px"
+          }}>
+            <Grid container sx={{
+              width: "100%",
+            }}>
+              <Grid item xs={6} sx={{display: "flex", justifyContent: "center"}}>
+                <FormControl sx={{m: 1, width: 300}}>
+                  <Box>
+                    <Typography variant={"h6"} style={{
+                      color: "#FFFFFF",
+                      fontWeight: "bold",
+                      textShadow: "3px 3px #939393"
+                    }}>Insumo</Typography>
+                    <TextField id="outlined-basic" type={"text"} variant="outlined" sx={{
+                      backgroundColor: "#96BC60",
+                      width: "100%"
+                    }}/>
+                  </Box>
+                </FormControl>
+              </Grid>
+              <Grid item xs={6} sx={{display: "flex", justifyContent: "center"}}>
+                <FormControl sx={{m: 1, width: 300}}>
+                  <Box>
+                    <Typography variant={"h6"}
+                                style={{color: "#FFFFFF", fontWeight: "bold", textShadow: "3px 3px #939393"}}>CAS
+                      Insumo
+                    </Typography>
+                    <TextField id="outlined-basic" type={"text"} variant="outlined" sx={{
+                      backgroundColor: "#96BC60",
+                      width: "100%"
+                    }}/>
+                  </Box>
+                </FormControl>
+              </Grid>
+              <Grid item xs={6} sx={{display: "flex", justifyContent: "center"}}>
+                <FormControl sx={{m: 1, width: 300}}>
+                  <Box>
+                    <Typography variant={"h6"} style={{
+                      color: "#FFFFFF",
+                      fontWeight: "bold",
+                      textShadow: "3px 3px #939393"
+                    }}>Planta</Typography>
+                    <Select
+                      value={planta}
+                      onChange={handleChangePlanta}
+                      sx={{
+                        backgroundColor: "#96BC60",
+                        width: "100%"
+                      }}
+                    >
+                      {itemPlanta.map((planta) => (
+                        <MenuItem
+                          key={planta}
+                          value={planta}
+                        >{planta}</MenuItem>
+                      ))}
+                    </Select>
+                  </Box>
+                </FormControl>
+              </Grid>
+              <Grid item xs={6} sx={{display: "flex", justifyContent: "center"}}>
+                <FormControl sx={{m: 1, width: 300}}>
+                  <Box hidden={hiddenStep1}>
+                    <Typography variant={"h6"} style={{
+                      color: "#FFFFFF",
+                      fontWeight: "bold",
+                      textShadow: "3px 3px #939393"
+                    }}>Producto</Typography>
+                    <Select
+                      value={product}
+                      onChange={handleChangeProduct}
+                      sx={{
+                        backgroundColor: "#96BC60",
+                        width: "100%"
+                      }}
+                    >
+                      {itemProduct.map((product) => (
+                        <MenuItem
+                          key={product}
+                          value={product}
+                        >{product}</MenuItem>
+                      ))}
+                    </Select>
+                  </Box>
+                </FormControl>
+              </Grid>
+              <Grid item xs={6} sx={{display: "flex", justifyContent: "center"}}>
+                <FormControl sx={{m: 1, width: 300}}>
+                  <Box hidden={hiddenStep2}>
+                    <Typography variant={"h6"}
+                                style={{color: "#FFFFFF", fontWeight: "bold", textShadow: "3px 3px #939393"}}>Linea de
+                      producción</Typography>
+                    <Select
+                      value={lProduccion}
+                      onChange={handleChangeProduccion}
+                      sx={{
+                        backgroundColor: "#96BC60",
+                        width: "100%"
+                      }}
+                    >
+                      {itemLineaProduccion.map((produccion) => (
+                        <MenuItem
+                          key={produccion}
+                          value={produccion}
+                        >{produccion}</MenuItem>
+                      ))}
+                    </Select>
+                  </Box>
+                </FormControl>
+              </Grid>
+              <Grid item xs={6} sx={{display: "flex", justifyContent: "center"}}>
+                <FormControl sx={{m: 1, width: 300}}>
+                  <Box hidden={hiddenStep2}>
+                    <Typography variant={"h6"} style={{
+                      color: "#FFFFFF",
+                      fontWeight: "bold",
+                      textShadow: "3px 3px #939393"
+                    }}>Centro</Typography>
+                    <Select
+                      value={centro}
+                      onChange={handleChangeCentro}
+                      sx={{
+                        backgroundColor: "#96BC60",
+                        width: "100%"
+                      }}
+                    >
+                      {itemCentro.map((centro) => (
+                        <MenuItem
+                          key={centro}
+                          value={centro}
+                        >{centro}</MenuItem>
+                      ))}
+                    </Select>
+                  </Box>
+                </FormControl>
+              </Grid>
+              <Grid item xs={6} sx={{display: "flex", justifyContent: "center"}}>
+                <FormControl sx={{m: 1, width: 300}}>
+                  <Box hidden={hiddenStep3}>
+                    <Typography variant={"h6"}
+                                style={{color: "#FFFFFF", fontWeight: "bold", textShadow: "3px 3px #939393"}}>Contacto
+                      con
+                      fibra</Typography>
+                    <Select
+                      value={fibra}
+                      onChange={handleChangeFibra}
+                      sx={{
+                        backgroundColor: "#96BC60",
+                        width: "100%"
+                      }}
+                    >
+                      {itemContactoFibra.map((fibra) => (
+                        <MenuItem
+                          key={fibra}
+                          value={fibra}
+                        >{fibra}</MenuItem>
+                      ))}
+                    </Select>
+                  </Box>
+                </FormControl>
+              </Grid>
+              <Grid item xs={6} sx={{display: "flex", justifyContent: "center"}}>
+                <FormControl sx={{m: 1, width: 300}}>
+                  <Box hidden={hiddenStep4}>
+                    <Typography variant={"h6"}
+                                style={{color: "#FFFFFF", fontWeight: "bold", textShadow: "3px 3px #939393"}}>Dosificación
+                    </Typography>
+                    <TextField id="outlined-basic" type={"number"} variant="outlined" sx={{
+                      backgroundColor: "#96BC60",
+                      width: "100%"
+                    }}/>
+                    <FormControlLabel control={<span></span>} label={"(*) Completar con punto y dos decimales"}
+                                      sx={{marginLeft: 1, color: "white", textShadow: "3px 3px #939393"}}/>
+                  </Box>
+                </FormControl>
+              </Grid>
+
+            </Grid>
+          </Box>
+          <SimpleButtonComponent
+            title={translate("newChemical.button1")}
+            color={"#1C7638"}
+            handleClick={handleSubmit}
+          />
+        </form>
+      </Box>
+      <Box sx={{
+        width: "100%",
+        position: "fixed",
+        bottom: "0",
+        left: "0",
+      }}>
+        <FooterComponent/>
+
+      </Box>
+    </BackgroungHome>
+  );
+};
+
+export default NewChemical;
+
+/*<React.Fragment>
       <NavBarComponent displayArrow={"block"}/>
       <Banner title={translate("newChemical.header")}/>
       <Box
@@ -153,7 +397,7 @@ const NewChemical = () => {
                 <FormControl sx={{m: 1, width: 300}}>
                   <Box >
                     <Typography variant={"h6"}
-                                style={{color: "#FFFFFF", fontWeight: "bold", textShadow: "3px 3px #939393"}}>Número CAS
+                                style={{color: "#FFFFFF", fontWeight: "bold", textShadow: "3px 3px #939393"}}>CAS Insumo
                     </Typography>
                     <TextField id="outlined-basic" type={"text"} variant="outlined" sx={{
                       backgroundColor: "#96BC60",
@@ -315,8 +559,4 @@ const NewChemical = () => {
         </form>
       </Box>
       <FooterComponent/>
-    </React.Fragment>
-  );
-};
-
-export default NewChemical;
+    </React.Fragment>*/
