@@ -32,6 +32,7 @@ import ApprovedValidation from "./pages/ValidateCAS/subpages/ApprovedValidation"
 import PreviewEmailValidate from "./pages/ValidateCAS/subpages/PreviewEmailValidate";
 import EmailApprovedValidation from "./pages/ValidateCAS/subpages/EmailApprovedValidation";
 import {UpdateDataSupplier} from "./pages/PeriodicValidation/UpdateDataSupplier";
+import EmailSend from "./pages/RegisterChemical/components/EmailSend";
 
 function App() {
   //Translation
@@ -85,6 +86,7 @@ function App() {
           <Route path={"registrar_insumo"} element={<RequiredLang><RegisterChemical/></RequiredLang>}/>
           <Route path={"registrar_insumo/nuevo_registro"} element={<RequiredLang><NewChemical/></RequiredLang>}/>
           <Route path={"registrar_insumo/nuevo_registro/buscar_proveedor"} element={<RequiredLang><SearchSupplier/></RequiredLang>}/>
+          <Route path={"registrar_insumo/correo_enviado"} element={<RequiredLang><EmailSend/></RequiredLang>}/>
           <Route path={"registrar_insumo/revisar_solicitud"} element={<RequiredLang> <ReviewTicket/></RequiredLang>}/>
           <Route path={"desbloquear_insumo"} element={<RequiredLang><UnlockChemical/></RequiredLang>}/>
           <Route path={"actualizar_formulario_proveedor"} element={<RequiredLang><UpdateFormSupplier/></RequiredLang>}/>

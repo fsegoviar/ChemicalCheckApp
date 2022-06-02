@@ -5,12 +5,12 @@ const ButtonComponent = ({title, handleClick, color}: any) => {
   return (
     <Button onClick={handleClick} sx={{
       maxWidth: "300px",
-      fontSize: "1.3rem",
+      fontSize: "1.1rem",
       fontWeight: "bold",
       backgroundColor: color,
       borderRadius: 50,
       border: "3px solid white",
-      padding: "5px 30px",
+      padding: "0 30px",
       margin: "20px",
       color: "white",
       "&:hover":{
